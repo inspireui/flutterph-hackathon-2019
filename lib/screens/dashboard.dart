@@ -44,17 +44,17 @@ class DashboardScreenState extends State<DashboardScreen> {
         children: <Widget>[
           Padding(padding: EdgeInsets.only(bottom: 150)),
           Text(
-            'Google Online Hackathon 2019',
+            'Flutter Online Hackathon 2019',
             style: TextStyle(
-              fontSize: 64,
+              fontSize: 36,
               fontWeight: FontWeight.bold,
             ),
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Text(
-            'October 1-14 2019 | Philippines',
+            'by Flutter Philippines | October 1-14 2019',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -62,8 +62,27 @@ class DashboardScreenState extends State<DashboardScreen> {
           Text(
             'With up to \$2000 worth of prizes!',
             style: TextStyle(
-              fontSize: 48,
+              fontSize: 54,
               fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 50)),
+          Text(
+            'Powered by',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 10)),
+          Container(
+            width: 200,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Image.network(
+                'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
+              ),
             ),
           ),
         ],
@@ -124,10 +143,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                             Text(
                               'Everything is a Widget',
                               style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold
-                              ),
+                                  fontSize: 24,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
