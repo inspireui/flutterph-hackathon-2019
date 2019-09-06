@@ -42,7 +42,7 @@ class DashboardScreenState extends State<DashboardScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(bottom: 100)),
+          Padding(padding: EdgeInsets.only(bottom: 150)),
           Text(
             'Google Online Hackathon 2019',
             style: TextStyle(
@@ -50,14 +50,22 @@ class DashboardScreenState extends State<DashboardScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Padding(padding: EdgeInsets.only(bottom: 20)),
+          Padding(padding: EdgeInsets.only(bottom: 10)),
           Text(
             'October 1-14 2019 | Philippines',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
-          )
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 50)),
+          Text(
+            'With up to \$2000 worth of prizes!',
+            style: TextStyle(
+              fontSize: 48,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );
