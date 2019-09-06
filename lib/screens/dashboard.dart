@@ -19,11 +19,14 @@ class DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(50),
-        child: Column(
-          children: <Widget>[
-            buildHeaderView(),
-            buildStudyJamsView(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              buildHeaderView(),
+              buildStudyJamsView(),
+              buildMechanicsView()
+            ],
+          ),
         ),
       ),
     );
@@ -45,7 +48,7 @@ class DashboardScreenState extends State<DashboardScreen> {
           ),
           Padding(padding: EdgeInsets.only(bottom: 20)),
           Text(
-            'October 1-14 2019 | Philppines',
+            'October 1-14 2019 | Philippines',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -61,39 +64,96 @@ class DashboardScreenState extends State<DashboardScreen> {
       width: _width,
       child: Stack(
         children: <Widget>[
-          Container(
-            width: 800,
-            child: FittedBox(
-              fit: BoxFit.fitWidth,
-              child: Image.network(
-                  'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png'),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: 800,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                      'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png'),
+                ),
+              ),
+            ],
           ),
           Positioned.fill(
             child: Align(
               alignment: Alignment.centerRight,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Material(
-                    elevation: 12.0,
-                    color: Colors.white,
-                    clipBehavior: Clip.antiAlias,
-                    shadowColor: Colors.black54,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    child: Container(
-                      height: 400,
-                      width: 400,
-                      padding: EdgeInsets.all(10),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[],
+              child: Padding(
+                padding: EdgeInsets.only(right: 50),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Material(
+                      elevation: 12.0,
+                      color: Colors.white,
+                      clipBehavior: Clip.antiAlias,
+                      shadowColor: Colors.black54,
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      child: Container(
+                          height: 400,
+                          width: 400,
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            children: <Widget>[],
+                          )),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildMechanicsView() {
+    return Container(
+      width: _width,
+      child: Stack(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                width: 600,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                      'https://user-images.githubusercontent.com/20706361/64430494-f9009380-d0ea-11e9-9513-16ef6c3db06f.png'),
+                ),
+              ),
+            ],
+          ),
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 50),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Material(
+                      elevation: 12.0,
+                      color: Colors.white,
+                      clipBehavior: Clip.antiAlias,
+                      shadowColor: Colors.black54,
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      child: Container(
+                        height: 400,
+                        width: 400,
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          children: <Widget>[],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
