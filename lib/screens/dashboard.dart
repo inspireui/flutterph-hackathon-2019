@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/headers.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -75,7 +76,8 @@ class DashboardScreenState extends State<DashboardScreen> {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Image.network(
-                      'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png'),
+                    'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png',
+                  ),
                 ),
               ),
             ],
@@ -96,12 +98,32 @@ class DashboardScreenState extends State<DashboardScreen> {
                       shadowColor: Colors.black54,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: Container(
-                          height: 400,
-                          width: 400,
-                          padding: EdgeInsets.all(10),
-                          child: Column(
-                            children: <Widget>[],
-                          )),
+                        height: 400,
+                        width: 400,
+                        padding: EdgeInsets.all(30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            SectionHeaderWidget(title: 'Study Jams'),
+                            Padding(padding: EdgeInsets.only(bottom: 24)),
+                            Text(
+                              'September 24, 2019',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            Text(
+                              'Everything is a Widget',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
