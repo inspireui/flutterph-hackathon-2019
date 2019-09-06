@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/chip.dart';
 import 'package:flutterph_hackathon2019/common/widgets/headers.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -125,57 +126,75 @@ class DashboardScreenState extends State<DashboardScreen> {
                       shadowColor: Colors.black54,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: Container(
-                        height: 400,
-                        width: 400,
+                        height: 450,
+                        width: 500,
                         padding: EdgeInsets.all(30),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            SectionHeaderWidget(title: 'Study Jams'),
-                            Padding(padding: EdgeInsets.only(bottom: 24)),
-                            Text(
-                              'September 24, 2019',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.orange,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              SectionHeaderWidget(title: 'Study Jams'),
+                              Padding(padding: EdgeInsets.only(bottom: 16)),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  FPHChip(
+                                    title: 'Manila',
+                                    color: Colors.blue,
+                                    isSelected: true,
+                                  ),
+                                  FPHChip(
+                                    title: 'Cebu',
+                                    color: Colors.blue,
+                                    isSelected: false,
+                                  ),
+                                ],
                               ),
-                            ),
-                            Text(
-                              'Everything is a Widget, Flutter Animations',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                              Padding(padding: EdgeInsets.only(bottom: 24)),
+                              Text(
+                                'September 24, 2019',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.orange,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'Recruitday, Inc., Paseo de Roxas, Makati',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                            Padding(padding: EdgeInsets.only(bottom: 24)),
-                            Text(
-                              'October 1, 2019',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.orange,
-                              ),
-                            ),
-                            Text(
-                              'State Management, RESTful APIs in Flutter',
-                              style: TextStyle(
+                              Text(
+                                'Everything is a Widget, Flutter Animations',
+                                style: TextStyle(
                                   fontSize: 24,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              'Recruitday, Inc., Paseo de Roxas, Makati',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
+                              Text(
+                                'Venue',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(bottom: 24)),
+                              Text(
+                                'October 1, 2019',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.orange,
+                                ),
+                              ),
+                              Text(
+                                'State Management, RESTful APIs in Flutter',
+                                style: TextStyle(
+                                    fontSize: 24, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'Venue',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
