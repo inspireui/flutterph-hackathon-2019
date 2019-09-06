@@ -18,13 +18,16 @@ class DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(50),
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               buildHeaderView(),
               buildStudyJamsView(),
-              buildMechanicsView()
+              buildMechanicsView(),
+              Padding(padding: EdgeInsets.only(bottom: 50)),
+              buildFooterView(),
+              Padding(padding: EdgeInsets.only(bottom: 50)),
             ],
           ),
         ),
@@ -159,6 +162,23 @@ class DashboardScreenState extends State<DashboardScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildFooterView() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Center(
+          child: Text(
+            'Illustrations by https://icons8.com\t|\tWebsite by Flutter Philippines\t|\tPowered by Github Pages',
+            style: TextStyle(
+              color: Colors.black54,
+              fontSize: 16,
+            ),
+          ),
+        )
+      ],
     );
   }
 }
