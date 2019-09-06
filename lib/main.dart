@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'FontTheme',
         primarySwatch: Colors.blue,
       ),
       home: DashboardScreen(),

@@ -1,0 +1,11 @@
+[{
+    "family": "FontTheme",
+    "fonts": [{
+            "asset": "fonts/font-bold.ttf",
+            "weight": 700
+        },
+        {
+            "asset": "fonts/font-regular.ttf"
+        }
+    ]
+}]
