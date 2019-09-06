@@ -17,6 +17,7 @@ class SectionHeaderWidget extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: 36,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ],

@@ -141,11 +141,39 @@ class DashboardScreenState extends State<DashboardScreen> {
                               ),
                             ),
                             Text(
-                              'Everything is a Widget',
+                              'Everything is a Widget, Flutter Animations',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Recruitday, Inc., Paseo de Roxas, Makati',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black54,
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(bottom: 24)),
+                            Text(
+                              'October 1, 2019',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            Text(
+                              'State Management, RESTful APIs in Flutter',
                               style: TextStyle(
                                   fontSize: 24,
-                                  color: Colors.black54,
                                   fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Recruitday, Inc., Paseo de Roxas, Makati',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black54,
+                              ),
                             ),
                           ],
                         ),
