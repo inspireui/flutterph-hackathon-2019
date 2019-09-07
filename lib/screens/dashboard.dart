@@ -559,7 +559,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'Members',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Colors.orange,
+                                      color: FPHColors.blue,
                                     ),
                                   ),
                                   Text(
@@ -581,7 +581,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'Submission',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Colors.orange,
+                                      color: FPHColors.red,
                                     ),
                                   ),
                                   Text(
@@ -603,7 +603,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'Deployment',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Colors.orange,
+                                      color: FPHColors.yellow,
                                     ),
                                   ),
                                   Text(
