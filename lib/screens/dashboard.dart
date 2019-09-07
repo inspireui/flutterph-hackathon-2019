@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/page_control.dart';
 import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 import 'package:flutterph_hackathon2019/theme/colors.dart';
 import 'package:flutterph_hackathon2019/theme/theme.dart';
@@ -28,7 +29,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   double _pageTitleFontSize = 120;
 
   // Page Transition
-  Duration _opacityTransitionDuration = Duration(milliseconds: 100);
+  Duration _opacityTransitionDuration = Duration(milliseconds: 250);
   double _opacityHeaderView = 1.0;
   double _opacityTimelineView = 1.0;
   double _opacityStudyJamsView = 1.0;
@@ -278,6 +279,21 @@ class DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                 ),
+              ),
+              Positioned.fill(
+                child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: FPHPageControl(
+                      onPressed: () {
+                        _pageController.animateToPage(
+                          1,
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      controlOption: FPHPageControlOption.NEXT,
+                      color: Colors.black54,
+                    )),
               ),
             ],
           ),
