@@ -109,12 +109,15 @@ class DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: FPHFooter(
-                  height: _height * 0.05,
-                ),
-              ),
+              // Only show footer on the last page
+              _currentPage == _maxPage - 1
+                  ? Align(
+                      alignment: Alignment.bottomCenter,
+                      child: FPHFooter(
+                        height: _height * 0.05,
+                      ),
+                    )
+                  : Container()
             ],
           ),
         ),
