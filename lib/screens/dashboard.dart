@@ -3,8 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
-import 'package:flutterph_hackathon2019/common/widgets/chip.dart';
-import 'package:flutterph_hackathon2019/common/widgets/headers.dart';
+import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -170,68 +169,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 50)),
-                        Text(
-                          'Powered by',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
-                          ),
-                        ),
+                        FPHPoweredBy(),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
-                        Container(
-                          width: 200,
-                          child: FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: Image.network(
-                              'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
-                            ),
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 50)),
-                        Text(
-                          'Our Partners',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 10)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              width: 200,
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Image.network(
-                                  'https://via.placeholder.com/200x100',
-                                ),
-                              ),
-                            ),
-                            Padding(padding: EdgeInsets.only(right: 10)),
-                            Container(
-                              width: 200,
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Image.network(
-                                  'https://via.placeholder.com/200x100',
-                                ),
-                              ),
-                            ),
-                            Padding(padding: EdgeInsets.only(right: 10)),
-                            Container(
-                              width: 200,
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Image.network(
-                                  'https://via.placeholder.com/200x100',
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+                        FPHPartners(),
                       ],
                     ),
                   ),
