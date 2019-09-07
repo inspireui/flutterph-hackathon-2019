@@ -283,7 +283,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'Announcement of Winners at Google DevFest 2019',
+                                    'Announcement of winners at Google DevFest 2019',
                                     style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
@@ -549,7 +549,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   SectionHeaderWidget(
-                                    title: 'Registration / Mechanics',
+                                    title: 'Mechanics',
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 16)),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
@@ -561,7 +561,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'Gather a team of 4* creative minds',
+                                    'Gather a team of 4* creative thinkers',
                                     style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
