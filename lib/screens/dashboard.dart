@@ -37,7 +37,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     _pageController = PageController(
-      initialPage: 2,
+      initialPage: 0,
     );
 
     _pageController.addListener(() {
@@ -380,7 +380,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                         },
                                         child: FPHChip(
                                           title: 'Cebu',
-                                          color: Colors.blue,
+                                          color: Color(0xffDB4437),
                                           isSelected:
                                               !isStudyJamShowingManilaSchedule,
                                         ),
@@ -415,7 +415,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'September 24, 2019',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.orange,
+              color: Color(0xffF4B400),
             ),
           ),
           Text(
@@ -437,7 +437,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'October 1, 2019',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.orange,
+              color: Color(0xffF4B400),
             ),
           ),
           Text(
@@ -461,7 +461,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'Date',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.orange,
+              color: Color(0xffF4B400),
             ),
           ),
           Text(
@@ -483,7 +483,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'Date',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.orange,
+              color: Color(0xffF4B400),
             ),
           ),
           Text(
