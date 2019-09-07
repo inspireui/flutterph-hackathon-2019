@@ -24,7 +24,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   Color _pageBackgroundColor = Colors.white60;
 
   // Page Transition
-  Duration _opacityTransitionDuration = Duration(milliseconds: 300);
+  Duration _opacityTransitionDuration = Duration(milliseconds: 250);
   double _opacityHeaderView = 1.0;
   double _opacityTimelineView = 1.0;
   double _opacityStudyJamsView = 1.0;
@@ -55,7 +55,7 @@ class DashboardScreenState extends State<DashboardScreen> {
           _pageBackgroundColor = Color(0xffffd0d2);
           _opacityStudyJamsView = 1.0;
         } else if (_currentPage == 3) {
-          _pageBackgroundColor = Color(0xff00ff00);
+          _pageBackgroundColor = Color(0xffffe6d0);
           _opacityMechanicsView = 1.0;
         } else if (_currentPage == 4) {
           _pageBackgroundColor = Color(0xff00ff00);
@@ -234,7 +234,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                           shadowColor: Colors.black54,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           child: Container(
-                            height: 400,
                             width: 500,
                             padding: EdgeInsets.all(30),
                             child: SingleChildScrollView(
@@ -344,7 +343,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                           shadowColor: Colors.black54,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           child: Container(
-                            height: 450,
                             width: 500,
                             padding: EdgeInsets.all(30),
                             child: SingleChildScrollView(
@@ -513,9 +511,9 @@ class DashboardScreenState extends State<DashboardScreen> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: Container(
-                    width: 600,
+                    width: 700,
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Image.network(
@@ -527,12 +525,12 @@ class DashboardScreenState extends State<DashboardScreen> {
               ),
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: Padding(
                     padding: EdgeInsets.only(right: 50),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Material(
                           elevation: 12.0,
@@ -541,7 +539,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                           shadowColor: Colors.black54,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           child: Container(
-                            height: 450,
                             width: 500,
                             padding: EdgeInsets.all(30),
                             child: SingleChildScrollView(
@@ -550,48 +547,72 @@ class DashboardScreenState extends State<DashboardScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   SectionHeaderWidget(
-                                      title: 'Registration / Mechanics'),
+                                    title: 'Registration / Mechanics',
+                                  ),
                                   Padding(padding: EdgeInsets.only(bottom: 16)),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
-                                    'September 24, 2019',
+                                    'Members',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.orange,
                                     ),
                                   ),
                                   Text(
-                                    'Everything is a Widget, Flutter Animations',
+                                    'Gather a team of 4* creative minds',
                                     style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
-                                    'Venue',
+                                    '*Minimum of 2 and maximum of 4 members',
                                     style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 12,
                                       color: Colors.black54,
                                     ),
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
-                                    'October 1, 2019',
+                                    'Submission',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.orange,
                                     ),
                                   ),
                                   Text(
-                                    'State Management, RESTful APIs in Flutter',
+                                    'Upload your projects to Github',
                                     style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold),
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                   Text(
-                                    'Venue',
+                                    'We\'re passionate on supporting the open-source community',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(bottom: 24)),
+                                  Text(
+                                    'Deployment',
                                     style: TextStyle(
                                       fontSize: 16,
+                                      color: Colors.orange,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Ship that app!',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Special prizes await those teams who can ship their app to Google Play Store',
+                                    style: TextStyle(
+                                      fontSize: 12,
                                       color: Colors.black54,
                                     ),
                                   ),
