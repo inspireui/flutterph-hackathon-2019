@@ -5,6 +5,8 @@
 import 'package:flutter_web/material.dart';
 import 'dart:math';
 
+import 'package:flutterph_hackathon2019/theme/theme.dart';
+
 class FPHPageIndicator extends StatefulWidget {
   final currentPage;
   final maxPage;
@@ -20,12 +22,9 @@ class FPHPageIndicator extends StatefulWidget {
 
 class FPHPageIndicatorState extends State<FPHPageIndicator> {
   List<Color> _selectedColors = [
-    Color(0xff4285F4),
-    Color(0xffDB4437),
-    Color(0xffF4B400),
-    Color(0xff4285F4),
-    Color(0xffDB4437),
-    Color(0xffF4B400),
+    FPHColors.blue,
+    FPHColors.yellow,
+    FPHColors.red,
   ];
   Random _randomizer = Random();
   double _circleSize = 10;
@@ -88,6 +87,6 @@ class FPHPageIndicatorState extends State<FPHPageIndicator> {
   }
 
   Color _getSelectedColor() {
-    return _selectedColors[_randomizer.nextInt(_selectedColors.length - 1)];
+    return _selectedColors[_randomizer.nextInt(_selectedColors.length)];
   }
 }
