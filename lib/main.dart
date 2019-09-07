@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter PH Hackathon 2019',
       theme: ThemeData(
         fontFamily: 'FontTheme',
