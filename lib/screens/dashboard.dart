@@ -4,6 +4,7 @@
 
 import 'package:flutter_web/material.dart';
 import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
+import 'package:flutterph_hackathon2019/theme/theme.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -161,9 +162,10 @@ class DashboardScreenState extends State<DashboardScreen> {
                         Text(
                           'Flutter Online Hackathon 2019',
                           style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff4285F4)),
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            color: FPHColors.blue,
+                          ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
                         Text(
@@ -249,7 +251,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'September',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Color(0xff4285f4),
+                                      color: FPHColors.blue,
                                     ),
                                   ),
                                   Text(
@@ -264,7 +266,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'October',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Color(0xffDB4437),
+                                      color: FPHColors.red,
                                     ),
                                   ),
                                   Text(
@@ -279,7 +281,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     'November',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Color(0xffF4B400),
+                                      color: FPHColors.yellow,
                                     ),
                                   ),
                                   Text(
@@ -380,7 +382,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                         },
                                         child: FPHChip(
                                           title: 'Cebu',
-                                          color: Color(0xffDB4437),
+                                          color: FPHColors.red,
                                           isSelected:
                                               !isStudyJamShowingManilaSchedule,
                                         ),
@@ -415,7 +417,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'September 24, 2019',
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xffF4B400),
+              color: FPHColors.yellow,
             ),
           ),
           Text(
@@ -437,7 +439,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'October 1, 2019',
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xffF4B400),
+              color: FPHColors.yellow,
             ),
           ),
           Text(
@@ -461,7 +463,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'Date',
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xffF4B400),
+              color: FPHColors.yellow,
             ),
           ),
           Text(
@@ -483,7 +485,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             'Date',
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xffF4B400),
+              color: FPHColors.yellow,
             ),
           ),
           Text(
