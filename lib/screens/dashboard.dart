@@ -151,7 +151,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 50)),
                         Text(
-                          'With up to \$\$\$ worth of prizes!',
+                          'With \$2000+ worth of prizes!',
                           style: TextStyle(
                             fontSize: 54,
                             fontWeight: FontWeight.bold,
