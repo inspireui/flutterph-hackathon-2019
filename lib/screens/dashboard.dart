@@ -108,6 +108,12 @@ class DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: FPHFooter(
+                  height: _height * 0.05,
+                ),
+              ),
             ],
           ),
         ),
@@ -634,23 +640,6 @@ class DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildFooterView() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Center(
-          child: Text(
-            'Illustrations by https://icons8.com\t|\tWebsite by Flutter Philippines\t|\tPowered by Github Pages',
-            style: TextStyle(
-              color: Colors.black54,
-              fontSize: 16,
-            ),
-          ),
-        )
-      ],
     );
   }
 }
