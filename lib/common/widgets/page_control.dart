@@ -37,7 +37,7 @@ class FPHPageControl extends StatelessWidget {
       );
     } else {
       return InkWell(
-        onTap: () => onPressed,
+        onTap: onPressed,
         child: Container(
           padding: EdgeInsets.only(top: 10),
           height: 60,

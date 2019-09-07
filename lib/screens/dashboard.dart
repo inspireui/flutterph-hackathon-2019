@@ -70,11 +70,11 @@ class DashboardScreenState extends State<DashboardScreen> {
           _opacityMechanicsView = 1.0;
           _pageName = "Mechanics";
           _pageTitleFontSize = 100;
-        } else if (_currentPage == 3) {
+        } else if (_currentPage == 4) {
           _pageBackgroundColor = Color(0xffffefef3);
           _opacityAboutView = 1.0;
           _pageName = "About";
-          _pageTitleFontSize = 100;
+          _pageTitleFontSize = 90;
         } else {
           _pageBackgroundColor = Color(0xfffefef3);
           _pageName = "";
@@ -282,18 +282,19 @@ class DashboardScreenState extends State<DashboardScreen> {
               ),
               Positioned.fill(
                 child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: FPHPageControl(
-                      onPressed: () {
-                        _pageController.animateToPage(
-                          1,
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      },
-                      controlOption: FPHPageControlOption.NEXT,
-                      color: Colors.black54,
-                    )),
+                  alignment: Alignment.bottomCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        1,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.NEXT,
+                    color: Colors.black54,
+                  ),
+                ),
               ),
             ],
           ),
@@ -403,6 +404,38 @@ class DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        0,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.PREVIOUS,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        2,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.NEXT,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -500,6 +533,38 @@ class DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ],
                     ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        1,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.PREVIOUS,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        3,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.NEXT,
+                    color: Colors.black54,
                   ),
                 ),
               ),
@@ -731,6 +796,38 @@ class DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
               ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        2,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.PREVIOUS,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        4,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.NEXT,
+                    color: Colors.black54,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -741,7 +838,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   Widget _buildAboutView() {
     return AnimatedOpacity(
       duration: _opacityTransitionDuration,
-      opacity: _opacityStudyJamsView,
+      opacity: _opacityAboutView,
       child: Center(
         child: Container(
           width: _width / 1.25,
@@ -836,6 +933,22 @@ class DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ],
                     ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: FPHPageControl(
+                    onPressed: () {
+                      _pageController.animateToPage(
+                        3,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    controlOption: FPHPageControlOption.PREVIOUS,
+                    color: Colors.black54,
                   ),
                 ),
               ),
