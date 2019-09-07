@@ -21,7 +21,7 @@ class FPHPageControl extends StatelessWidget {
       return InkWell(
         onTap: onPressed,
         child: Container(
-          padding: EdgeInsets.only(bottom: 10),
+          padding: EdgeInsets.only(bottom: 20),
           height: 60,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -39,7 +39,6 @@ class FPHPageControl extends StatelessWidget {
       return InkWell(
         onTap: onPressed,
         child: Container(
-          padding: EdgeInsets.only(top: 10),
           height: 60,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
