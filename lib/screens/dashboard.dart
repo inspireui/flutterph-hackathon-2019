@@ -4,6 +4,7 @@
 
 import 'package:flutter_web/material.dart';
 import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
+import 'package:flutterph_hackathon2019/theme/colors.dart';
 import 'package:flutterph_hackathon2019/theme/theme.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -189,6 +190,14 @@ class DashboardScreenState extends State<DashboardScreen> {
                             fontSize: 54,
                             fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 10)),
+                        FPHCtaButton(
+                          onPressed: () {
+                            // TODO: Link to registration form
+                          },
+                          title: 'Register Now',
+                          backgroundColor: FPHColors.yellow,
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 50)),
                         FPHPoweredBy(),
