@@ -30,10 +30,14 @@ class DashboardScreenState extends State<DashboardScreen> {
   double _opacityStudyJamsView = 1.0;
   double _opacityMechanicsView = 1.0;
 
+  // Study Jam
+  // TODO: Convert to enums. Currently, enums is not the simple to deal with.
+  bool isStudyJamShowingManilaSchedule = true;
+
   @override
   void initState() {
     _pageController = PageController(
-      initialPage: 1,
+      initialPage: 2,
     );
 
     _pageController.addListener(() {
@@ -312,7 +316,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: Container(
                     width: 800,
                     child: FittedBox(
@@ -331,7 +335,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                     padding: EdgeInsets.only(right: 50),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Material(
                           elevation: 12.0,
@@ -353,61 +357,38 @@ class DashboardScreenState extends State<DashboardScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: <Widget>[
-                                      FPHChip(
-                                        title: 'Manila',
-                                        color: Colors.blue,
-                                        isSelected: true,
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            isStudyJamShowingManilaSchedule =
+                                                true;
+                                          });
+                                        },
+                                        child: FPHChip(
+                                          title: 'Manila',
+                                          color: Colors.blue,
+                                          isSelected:
+                                              isStudyJamShowingManilaSchedule,
+                                        ),
                                       ),
-                                      FPHChip(
-                                        title: 'Cebu',
-                                        color: Colors.blue,
-                                        isSelected: false,
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            isStudyJamShowingManilaSchedule =
+                                                false;
+                                          });
+                                        },
+                                        child: FPHChip(
+                                          title: 'Cebu',
+                                          color: Colors.blue,
+                                          isSelected:
+                                              !isStudyJamShowingManilaSchedule,
+                                        ),
                                       ),
                                     ],
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'September 24, 2019',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.orange,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Everything is a Widget, Flutter Animations',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Venue',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black54,
-                                    ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'October 1, 2019',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.orange,
-                                    ),
-                                  ),
-                                  Text(
-                                    'State Management, RESTful APIs in Flutter',
-                                    style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    'Venue',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black54,
-                                    ),
-                                  ),
+                                  _buildStudyJamsScheduleView()
                                 ],
                               ),
                             ),
@@ -423,6 +404,102 @@ class DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
     );
+  }
+
+  Widget _buildStudyJamsScheduleView() {
+    if (isStudyJamShowingManilaSchedule) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'September 24, 2019',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.orange,
+            ),
+          ),
+          Text(
+            'Everything is a Widget, Flutter Animations',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'Venue',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'October 1, 2019',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.orange,
+            ),
+          ),
+          Text(
+            'State Management, RESTful APIs in Flutter',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Venue',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black54,
+            ),
+          ),
+        ],
+      );
+    } else {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Date',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.orange,
+            ),
+          ),
+          Text(
+            'Topic',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'Venue',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'Date',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.orange,
+            ),
+          ),
+          Text(
+            'Topic',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Venue',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black54,
+            ),
+          ),
+        ],
+      );
+    }
   }
 
   Widget _buildMechanicsView() {
