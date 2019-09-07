@@ -24,7 +24,7 @@ class FPHFooter extends StatelessWidget {
         children: <Widget>[
           _buildFooterLinkTextView('Website by Flutter Philippines', FPHWebsiteLinks.FLUTTER_PH),
           _buildFooterDivider(),
-          _buildFooterLinkTextView('Powered by Flutter for Web', FPHWebsiteLinks.FLUTTER_WEB),
+          _buildFooterLinkTextView('Made with Flutter for Web', FPHWebsiteLinks.FLUTTER_WEB),
           _buildFooterDivider(),
           _buildFooterLinkTextView('Illustrations by https://icons8.com', FPHWebsiteLinks.ICONS8),
         ],
