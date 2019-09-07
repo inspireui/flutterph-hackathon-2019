@@ -53,7 +53,7 @@ class DashboardScreenState extends State<DashboardScreen> {
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Text(
-            'by Flutter Philippines | October 1-14 2019',
+            'by Flutter Philippines | October 2019',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class DashboardScreenState extends State<DashboardScreen> {
           ),
           Padding(padding: EdgeInsets.only(bottom: 50)),
           Text(
-            'With up to \$2000 worth of prizes!',
+            'With up to \$\$\$ worth of prizes!',
             style: TextStyle(
               fontSize: 54,
               fontWeight: FontWeight.bold,
