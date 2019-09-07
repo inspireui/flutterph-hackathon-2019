@@ -3,12 +3,15 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'dart:html' as html;
+
+import 'package:flutterph_hackathon2019/common/constants/constants.dart';
 
 class FPHFooter extends StatelessWidget {
   final double height;
 
   const FPHFooter({Key key, this.height}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,17 +19,30 @@ class FPHFooter extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(
-            child: Text(
-              '\tWebsite by Flutter Philippines\t|\tPowered by Flutter for Web\t|\tIllustrations by https://icons8.com',
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 16,
-              ),
-            ),
-          )
+          _buildFooterLinkTextView('Website by Flutter Philippines', FPHWebsiteLinks.FLUTTER_PH),
+          _buildFooterDivider(),
+          _buildFooterLinkTextView('Powered by Flutter for Web', FPHWebsiteLinks.FLUTTER_WEB),
+          _buildFooterDivider(),
+          _buildFooterLinkTextView('Illustrations by https://icons8.com', FPHWebsiteLinks.ICONS8),
         ],
       ),
     );
+  }
+
+  Widget _buildFooterLinkTextView(String title, String url) {
+    return InkWell(
+      onTap: () => {html.window.location.href = url},
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.black54,
+          fontSize: 16,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFooterDivider() {
+    return Text('\t|\t');
   }
 }
