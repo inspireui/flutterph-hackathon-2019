@@ -26,13 +26,14 @@ class DashboardScreenState extends State<DashboardScreen> {
   // Page Transition
   Duration _opacityTransitionDuration = Duration(milliseconds: 300);
   double _opacityHeaderView = 1.0;
+  double _opacityTimelineView = 1.0;
   double _opacityStudyJamsView = 1.0;
   double _opacityMechanicsView = 1.0;
 
   @override
   void initState() {
     _pageController = PageController(
-      initialPage: 0,
+      initialPage: 1,
     );
 
     _pageController.addListener(() {
@@ -45,12 +46,13 @@ class DashboardScreenState extends State<DashboardScreen> {
           _opacityHeaderView = 1.0;
         } else if (_currentPage == 1) {
           _pageBackgroundColor = Color(0xfffefef3);
-          _opacityStudyJamsView = 1.0;
+          _opacityTimelineView = 1.0;
         } else if (_currentPage == 2) {
           _pageBackgroundColor = Color(0xffffd0d2);
-          _opacityMechanicsView = 1.0;
+          _opacityStudyJamsView = 1.0;
         } else if (_currentPage == 3) {
           _pageBackgroundColor = Color(0xff00ff00);
+          _opacityMechanicsView = 1.0;
         } else if (_currentPage == 4) {
           _pageBackgroundColor = Color(0xff00ff00);
         } else {
@@ -84,6 +86,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             controller: _pageController,
             children: <Widget>[
               _buildHeaderView(),
+              _buildTimelineView(),
               _buildStudyJamsView(),
               _buildMechanicsView(),
             ],
@@ -96,6 +99,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   void _hideAllViews() {
     setState(() {
       _opacityHeaderView = 0.0;
+      _opacityTimelineView = 0.0;
       _opacityStudyJamsView = 0.0;
       _opacityMechanicsView = 0.0;
     });
@@ -173,6 +177,115 @@ class DashboardScreenState extends State<DashboardScreen> {
                             fit: BoxFit.fitWidth,
                             child: Image.network(
                               'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTimelineView() {
+    return AnimatedOpacity(
+      duration: _opacityTransitionDuration,
+      opacity: _opacityTimelineView,
+      child: Center(
+        child: Container(
+          width: _width / 1.25,
+          child: Stack(
+            children: <Widget>[
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    width: 800,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.network(
+                          'https://user-images.githubusercontent.com/20706361/64471408-09188180-d184-11e9-83dc-1ec1005d892b.png'),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 50),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Material(
+                          elevation: 12.0,
+                          color: Colors.white,
+                          clipBehavior: Clip.antiAlias,
+                          shadowColor: Colors.black54,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          child: Container(
+                            height: 400,
+                            width: 500,
+                            padding: EdgeInsets.all(30),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  SectionHeaderWidget(title: 'Timeline'),
+                                  Padding(padding: EdgeInsets.only(bottom: 24)),
+                                  Text(
+                                    'September',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color(0xff4285f4),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Study Jams (Manila x Cebu)',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(bottom: 24)),
+                                  Text(
+                                    'October',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color(0xffDB4437),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Flutter Online Hackathon 2019',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(bottom: 24)),
+                                  Text(
+                                    'November',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color(0xffF4B400),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Announcement of Winners at Google DevFest 2019',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
