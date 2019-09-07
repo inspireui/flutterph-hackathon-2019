@@ -7,11 +7,10 @@ import 'package:flutter_web/material.dart';
 class FPHCtaButton extends StatelessWidget {
   final Function onPressed;
   final String title;
+  final Color titleColor;
   final Color backgroundColor;
 
-  const FPHCtaButton(
-      {Key key, this.onPressed, this.title, this.backgroundColor})
-      : super(key: key);
+  const FPHCtaButton({Key key, this.onPressed, this.title, this.titleColor, this.backgroundColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class FPHCtaButton extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                color: Colors.white,
+                color: titleColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

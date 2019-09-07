@@ -182,10 +182,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                           style: TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
-                            color: FPHColors.blue,
+                            color: Colors.black87,
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 10)),
                         Text(
                           'by Flutter Philippines | October 2019',
                           style: TextStyle(
@@ -200,6 +199,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                           style: TextStyle(
                             fontSize: 54,
                             fontWeight: FontWeight.bold,
+                            color: FPHColors.blue,
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -209,7 +209,8 @@ class DashboardScreenState extends State<DashboardScreen> {
                               onPressed: () {
                                 // TODO: Link to registration form
                               },
-                              title: 'Register Now',
+                              title: 'Register',
+                              titleColor: Colors.white,
                               backgroundColor: FPHColors.yellow,
                             ),
                             Padding(padding: EdgeInsets.only(right: 20)),
@@ -218,11 +219,17 @@ class DashboardScreenState extends State<DashboardScreen> {
                                 // TODO: Link to call for sponsors/partnership form
                               },
                               title: 'Become a partner',
-                              backgroundColor: FPHColors.blue,
+                              titleColor: FPHColors.yellow,
+                              backgroundColor: Colors.white,
                             ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 50)),
+                        Padding(padding: EdgeInsets.only(bottom: 30)),
+                        Text(
+                          'Be part of the first ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
+                          style: TextStyle(fontSize: 16, color: Colors.black54),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 30)),
                         FPHPoweredBy(),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
                         FPHPartners(),

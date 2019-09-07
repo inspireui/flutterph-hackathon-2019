@@ -22,7 +22,8 @@ class FPHStickyCtaHeader extends StatelessWidget {
             onPressed: () {
               // TODO: Link to registration form
             },
-            title: 'Register Now',
+            title: 'Register',
+            titleColor: Colors.white,
             backgroundColor: FPHColors.yellow,
           ),
         ],
