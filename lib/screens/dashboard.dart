@@ -351,7 +351,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                   SectionHeaderWidget(title: 'Timeline'),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
-                                    'September',
+                                    'September 2019',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: FPHColors.blue,
@@ -366,7 +366,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
-                                    'October',
+                                    'October 2019',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: FPHColors.red,
@@ -381,7 +381,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
-                                    'November',
+                                    'November 2019',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: FPHColors.yellow,
