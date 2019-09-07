@@ -18,7 +18,7 @@ class FPHFooter extends StatelessWidget {
         children: <Widget>[
           Center(
             child: Text(
-              'Illustrations by https://icons8.com\t|\tWebsite by Flutter Philippines\t|\tPowered by Github Pages',
+              '\tWebsite by Flutter Philippines\t|\tPowered by Flutter for Web\t|\tIllustrations by https://icons8.com',
               style: TextStyle(
                 color: Colors.black54,
                 fontSize: 16,
