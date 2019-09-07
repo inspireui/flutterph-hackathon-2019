@@ -88,6 +88,7 @@ class DashboardScreenState extends State<DashboardScreen> {
           child: Stack(
             children: <Widget>[
               PageView(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 controller: _pageController,
                 children: <Widget>[
@@ -599,7 +600,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     title: 'Mechanics',
                                   ),
                                   Padding(padding: EdgeInsets.only(bottom: 16)),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
                                   Text(
                                     'Members',
                                     style: TextStyle(
