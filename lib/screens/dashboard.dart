@@ -24,9 +24,11 @@ class DashboardScreenState extends State<DashboardScreen> {
   double _currentPage = 0;
   double _maxPage = 4;
   Color _pageBackgroundColor = Colors.white60;
+  String _pageName = "";
+  double _pageTitleFontSize = 120;
 
   // Page Transition
-  Duration _opacityTransitionDuration = Duration(milliseconds: 250);
+  Duration _opacityTransitionDuration = Duration(milliseconds: 100);
   double _opacityHeaderView = 1.0;
   double _opacityTimelineView = 1.0;
   double _opacityStudyJamsView = 1.0;
@@ -39,7 +41,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     _pageController = PageController(
-      initialPage: 0,
+      initialPage: 1,
     );
 
     _pageController.addListener(() {
@@ -50,17 +52,25 @@ class DashboardScreenState extends State<DashboardScreen> {
         if (_currentPage == 0) {
           _pageBackgroundColor = Colors.white60;
           _opacityHeaderView = 1.0;
+          _pageName = "";
         } else if (_currentPage == 1) {
           _pageBackgroundColor = Color(0xfffefef3);
           _opacityTimelineView = 1.0;
+          _pageName = "Timeline";
+          _pageTitleFontSize = 120;
         } else if (_currentPage == 2) {
           _pageBackgroundColor = Color(0xffffd0d2);
           _opacityStudyJamsView = 1.0;
+          _pageName = "Study Jams";
+          _pageTitleFontSize = 80;
         } else if (_currentPage == 3) {
           _pageBackgroundColor = Color(0xffffe6d0);
           _opacityMechanicsView = 1.0;
+          _pageName = "Mechanics";
+          _pageTitleFontSize = 100;
         } else {
           _pageBackgroundColor = Color(0xfffefef3);
+          _pageName = "";
         }
       });
     });
@@ -87,6 +97,29 @@ class DashboardScreenState extends State<DashboardScreen> {
           width: _width,
           child: Stack(
             children: <Widget>[
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Opacity(
+                    opacity: 0.10,
+                    child: Container(
+                      width: 700,
+                      padding: EdgeInsets.only(top: 30, left: 60),
+                      child: AnimatedDefaultTextStyle(
+                        duration: Duration(milliseconds: 250),
+                        child: Text(
+                          _pageName,
+                        ),
+                        style: TextStyle(
+                          fontSize: _pageTitleFontSize,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'FontTheme'
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               PageView(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
