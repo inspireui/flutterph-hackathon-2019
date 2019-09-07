@@ -20,6 +20,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   // Page
   PageController _pageController;
   double _currentPage = 0;
+  double _maxPage = 4;
   Color _pageBackgroundColor = Colors.white60;
 
   // Page Transition
@@ -84,14 +85,28 @@ class DashboardScreenState extends State<DashboardScreen> {
           color: _pageBackgroundColor,
           height: _height,
           width: _width,
-          child: PageView(
-            scrollDirection: Axis.vertical,
-            controller: _pageController,
+          child: Stack(
             children: <Widget>[
-              _buildHeaderView(),
-              _buildTimelineView(),
-              _buildStudyJamsView(),
-              _buildMechanicsView(),
+              PageView(
+                scrollDirection: Axis.vertical,
+                controller: _pageController,
+                children: <Widget>[
+                  _buildHeaderView(),
+                  _buildTimelineView(),
+                  _buildStudyJamsView(),
+                  _buildMechanicsView(),
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: FPHPageIndicator(
+                    currentPage: _currentPage,
+                    maxPage: _maxPage,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -146,10 +161,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                         Text(
                           'Flutter Online Hackathon 2019',
                           style: TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff4285F4)
-                          ),
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff4285F4)),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
                         Text(
