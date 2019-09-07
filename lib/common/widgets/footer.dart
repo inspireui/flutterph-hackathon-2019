@@ -12,6 +12,9 @@ class FPHFooter extends StatelessWidget {
 
   const FPHFooter({Key key, this.height}) : super(key: key);
 
+  // TODO: At this time, desktop UI interactions are not fully complete, so a UI built with flutter_web may feel like a mobile app, even when running on a desktop browser.
+  // https://stackoverflow.com/questions/56512036/how-do-i-link-http-url-to-flutter-web
+  // https://stackoverflow.com/questions/56211844/flutter-web-mouse-hover-change-cursor-to-pointer
   @override
   Widget build(BuildContext context) {
     return Container(
