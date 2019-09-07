@@ -22,7 +22,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   // Page
   PageController _pageController;
   double _currentPage = 0;
-  double _maxPage = 4;
+  double _maxPage = 5;
   Color _pageBackgroundColor = Colors.white60;
   String _pageName = "";
   double _pageTitleFontSize = 120;
@@ -33,6 +33,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   double _opacityTimelineView = 1.0;
   double _opacityStudyJamsView = 1.0;
   double _opacityMechanicsView = 1.0;
+  double _opacityAboutView = 1.0;
 
   // Study Jam
   // TODO: Convert to enums. Currently, enums is not the simple to deal with.
@@ -41,7 +42,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     _pageController = PageController(
-      initialPage: 1,
+      initialPage: 0,
     );
 
     _pageController.addListener(() {
@@ -67,6 +68,11 @@ class DashboardScreenState extends State<DashboardScreen> {
           _pageBackgroundColor = Color(0xffffe6d0);
           _opacityMechanicsView = 1.0;
           _pageName = "Mechanics";
+          _pageTitleFontSize = 100;
+        } else if (_currentPage == 3) {
+          _pageBackgroundColor = Color(0xffffefef3);
+          _opacityAboutView = 1.0;
+          _pageName = "About";
           _pageTitleFontSize = 100;
         } else {
           _pageBackgroundColor = Color(0xfffefef3);
@@ -111,10 +117,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                           _pageName,
                         ),
                         style: TextStyle(
-                          fontSize: _pageTitleFontSize,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'FontTheme'
-                        ),
+                            fontSize: _pageTitleFontSize,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'FontTheme'),
                       ),
                     ),
                   ),
@@ -129,6 +134,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                   _buildTimelineView(),
                   _buildStudyJamsView(),
                   _buildMechanicsView(),
+                  _buildAboutView()
                 ],
               ),
               Align(
@@ -173,6 +179,7 @@ class DashboardScreenState extends State<DashboardScreen> {
       _opacityTimelineView = 0.0;
       _opacityStudyJamsView = 0.0;
       _opacityMechanicsView = 0.0;
+      _opacityAboutView = 0.0;
     });
   }
 
@@ -526,7 +533,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Venue',
+            'Recruitday, Inc., 5th floor Paseo Center, Makati City',
             style: TextStyle(
               fontSize: 16,
               color: Colors.black54,
@@ -648,7 +655,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                   ),
                                   Text(
-                                    '*Minimum of 2 and maximum of 4 members',
+                                    '*Minimum of 2 and maximum of 4 members.',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.black54,
@@ -670,7 +677,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'We\'re passionate on supporting the open-source community',
+                                    'We\'re passionate on supporting the open-source community.',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.black54,
@@ -692,7 +699,115 @@ class DashboardScreenState extends State<DashboardScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'Special prizes await those teams who can ship their app to Google Play Store',
+                                    'Special prizes await those teams who can ship their app to Google Play Store.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAboutView() {
+    return AnimatedOpacity(
+      duration: _opacityTransitionDuration,
+      opacity: _opacityStudyJamsView,
+      child: Center(
+        child: Container(
+          width: _width / 1.25,
+          child: Stack(
+            children: <Widget>[
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    width: 800,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.network(
+                        'https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 50),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Material(
+                          elevation: 12.0,
+                          color: Colors.white,
+                          clipBehavior: Clip.antiAlias,
+                          shadowColor: Colors.black54,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          child: Container(
+                            width: 500,
+                            padding: EdgeInsets.all(30),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  SectionHeaderWidget(title: 'About'),
+                                  Padding(padding: EdgeInsets.only(bottom: 16)),
+                                  Text(
+                                    'The Website',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: FPHColors.blue,
+                                    ),
+                                  ),
+                                  Text(
+                                    'We use the technical preview of Flutter Web to develop this website',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter here in the Philippines.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  Padding(padding: EdgeInsets.only(bottom: 24)),
+                                  Text(
+                                    'Contribution',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: FPHColors.yellow,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Our website is open-source, feel free to submit PRs for fixes, improvements on Github',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'This was made just under 24 hours, but I ran out of coffee!',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.black54,
