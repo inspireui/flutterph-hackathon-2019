@@ -21,7 +21,7 @@ class DashboardScreenState extends State<DashboardScreen> {
   // Page
   PageController _pageController;
   double _currentPage = 0;
-  Color _pageBackgroundColor = Color(0xfffefef3);
+  Color _pageBackgroundColor = Colors.white60;
 
   // Page Transition
   Duration _opacityTransitionDuration = Duration(milliseconds: 300);
@@ -41,7 +41,7 @@ class DashboardScreenState extends State<DashboardScreen> {
         _hideAllViews();
 
         if (_currentPage == 0) {
-          _pageBackgroundColor = Color(0xfffefef3);
+          _pageBackgroundColor = Colors.white60;
           _opacityHeaderView = 1.0;
         } else if (_currentPage == 1) {
           _pageBackgroundColor = Color(0xfffefef3);
@@ -108,49 +108,76 @@ class DashboardScreenState extends State<DashboardScreen> {
       child: Center(
         child: Container(
           width: _width / 1.25,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(bottom: 150)),
-              Text(
-                'Flutter Online Hackathon 2019',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    width: 700,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.network(
+                        'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 10)),
-              Text(
-                'by Flutter Philippines | October 2019',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 50)),
-              Text(
-                'With up to \$\$\$ worth of prizes!',
-                style: TextStyle(
-                  fontSize: 54,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 50)),
-              Text(
-                'Powered by',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black54,
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 10)),
-              Container(
-                width: 200,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.network(
-                    'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 50),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Flutter Online Hackathon 2019',
+                          style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff1f1e00),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 10)),
+                        Text(
+                          'by Flutter Philippines | October 2019',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 50)),
+                        Text(
+                          'With up to \$\$\$ worth of prizes!',
+                          style: TextStyle(
+                            fontSize: 54,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 50)),
+                        Text(
+                          'Powered by',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 10)),
+                        Container(
+                          width: 200,
+                          child: FittedBox(
+                            fit: BoxFit.fitWidth,
+                            child: Image.network(
+                              'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
