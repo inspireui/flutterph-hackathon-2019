@@ -9,7 +9,9 @@ class FPHCtaButton extends StatelessWidget {
   final String title;
   final Color backgroundColor;
 
-  const FPHCtaButton({Key key, this.onPressed, this.title, this.backgroundColor}) : super(key: key);
+  const FPHCtaButton(
+      {Key key, this.onPressed, this.title, this.backgroundColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,12 @@ class FPHCtaButton extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       shadowColor: Colors.black54,
       borderRadius: BorderRadius.all(Radius.circular(10)),
-      child: Container(
-        width: 175,
-        height: 48,
-        child: Center(
-          child: InkWell(
-            onTap: onPressed,
+      child: InkWell(
+        onTap: onPressed,
+        child: Container(
+          width: 175,
+          height: 48,
+          child: Center(
             child: Text(
               title,
               style: TextStyle(

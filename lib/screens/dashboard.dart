@@ -203,12 +203,24 @@ class DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
-                        FPHCtaButton(
-                          onPressed: () {
-                            // TODO: Link to registration form
-                          },
-                          title: 'Register Now',
-                          backgroundColor: FPHColors.yellow,
+                        Row(
+                          children: <Widget>[
+                            FPHCtaButton(
+                              onPressed: () {
+                                // TODO: Link to registration form
+                              },
+                              title: 'Register Now',
+                              backgroundColor: FPHColors.yellow,
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 20)),
+                            FPHCtaButton(
+                              onPressed: () {
+                                // TODO: Link to call for sponsors/partnership form
+                              },
+                              title: 'Become a partner',
+                              backgroundColor: FPHColors.blue,
+                            ),
+                          ],
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 50)),
                         FPHPoweredBy(),
