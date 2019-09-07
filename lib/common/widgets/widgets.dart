@@ -9,3 +9,4 @@ export 'partners.dart';
 export 'page_indicator.dart';
 export 'footer.dart';
 export 'cta_button.dart';
+export 'sticky_cta_header.dart';

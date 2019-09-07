@@ -59,8 +59,6 @@ class DashboardScreenState extends State<DashboardScreen> {
         } else if (_currentPage == 3) {
           _pageBackgroundColor = Color(0xffffe6d0);
           _opacityMechanicsView = 1.0;
-        } else if (_currentPage == 4) {
-          _pageBackgroundColor = Color(0xff00ff00);
         } else {
           _pageBackgroundColor = Color(0xfffefef3);
         }
@@ -117,7 +115,17 @@ class DashboardScreenState extends State<DashboardScreen> {
                         height: _height * 0.05,
                       ),
                     )
-                  : Container()
+                  : Container(),
+
+              // Only show the sticky CTA button after the first page
+              _currentPage != 0
+                  ? Align(
+                      alignment: Alignment.topRight,
+                      child: Padding(
+                          padding: EdgeInsets.only(right: 20),
+                          child: FPHStickyCtaHeader()),
+                    )
+                  : Container(),
             ],
           ),
         ),
