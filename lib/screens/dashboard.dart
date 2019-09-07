@@ -121,12 +121,15 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Container(
-                    width: 700,
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                        'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: Container(
+                      width: 700,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                          'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
+                        ),
                       ),
                     ),
                   ),
@@ -146,7 +149,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                           style: TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xff1f1e00),
+                            color: Color(0xff4285F4)
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -155,6 +158,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
+                            color: Colors.black54,
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(bottom: 50)),
@@ -184,6 +188,50 @@ class DashboardScreenState extends State<DashboardScreen> {
                             ),
                           ),
                         ),
+                        Padding(padding: EdgeInsets.only(bottom: 50)),
+                        Text(
+                          'Our Partners',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(bottom: 10)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: 200,
+                              child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Image.network(
+                                  'https://via.placeholder.com/200x100',
+                                ),
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 10)),
+                            Container(
+                              width: 200,
+                              child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Image.network(
+                                  'https://via.placeholder.com/200x100',
+                                ),
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 10)),
+                            Container(
+                              width: 200,
+                              child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Image.network(
+                                  'https://via.placeholder.com/200x100',
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
