@@ -60,6 +60,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                     ),
                     Padding(padding: EdgeInsets.only(bottom: 20)),
                     FPHCtaButton(
+                      rootContext: context,
                       onPressed: () {
                         html.window.location.href = "http://bit.ly/flutterph-hackathon2019-sponsors";
                       },
