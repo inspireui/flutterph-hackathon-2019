@@ -265,7 +265,7 @@ class DashboardPageState extends State<DashboardPage> {
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 50)),
                       Text(
-                        'With \$2000+ worth of prizes to win!',
+                        'With over P100,000 worth of prizes to win!',
                         textScaleFactor:
                             ResponsiveWidget.isLargeScreen(context) ? 3.5 : 2,
                         style: TextStyle(
