@@ -31,11 +31,10 @@ class FPHPageIndicatorState extends State<FPHPageIndicator> {
     FPHColors.red,
   ];
   Random _randomizer = Random();
-  double _circleSize = 10;
+  double _circleSize = 7.5;
 
   @override
   void initState() {
-    _circleSize = ResponsiveWidget.isLargeScreen(widget.rootContext) ? 10 : 5;
 
     // TODO: implement initState
     super.initState();
