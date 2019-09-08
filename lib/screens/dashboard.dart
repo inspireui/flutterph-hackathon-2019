@@ -868,7 +868,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: Container(
                     width: 800,
                     child: FittedBox(
