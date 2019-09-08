@@ -7,6 +7,7 @@ import 'package:flutterph_hackathon2019/common/widgets/page_control.dart';
 import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 import 'package:flutterph_hackathon2019/theme/colors.dart';
 import 'package:flutterph_hackathon2019/theme/theme.dart';
+import 'dart:html' as html;
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -275,7 +276,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                               Padding(padding: EdgeInsets.only(right: 20)),
                               FPHCtaButton(
                                 onPressed: () {
-                                  // TODO: Link to call for sponsors/partnership form
+                                  html.window.location.href = "http://bit.ly/flutterph-hackathon2019-sponsors";
                                 },
                                 title: 'Become a partner',
                                 titleColor: FPHColors.yellow,
