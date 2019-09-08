@@ -412,7 +412,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'Announcement of winners at Google DevFest 2019',
+                                      'Announcement of winners!',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
@@ -955,7 +955,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'We use the technical preview of Flutter Web to develop this website',
+                                      'We use the technical preview of Flutter for Web to develop this website',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
