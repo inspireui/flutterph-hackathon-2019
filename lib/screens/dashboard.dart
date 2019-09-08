@@ -852,7 +852,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'We\'re passionate on supporting the open-source community. Demo videos will be asked if app is not uploaded to the Google Play Store.',
+                                      'We\'re passionate on supporting the open-source community. Demo videos is required if app is not uploaded to Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -875,7 +875,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Special prizes await those teams who can ship their app to the Google Play Store.',
+                                      'Special prizes await those teams who can ship their app to Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
