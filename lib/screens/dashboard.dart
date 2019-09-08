@@ -213,69 +213,73 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Flutter Online Hackathon 2019',
-                          style: TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        Text(
-                          'by Flutter Philippines | October 2019',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 50)),
-                        Text(
-                          'With \$2000+ worth of prizes!',
-                          style: TextStyle(
-                            fontSize: 54,
-                            fontWeight: FontWeight.bold,
-                            color: FPHColors.blue,
-                          ),
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 10)),
-                        Row(
-                          children: <Widget>[
-                            FPHCtaButton(
-                              onPressed: () {
-                                // TODO: Link to registration form
-                              },
-                              title: 'Register',
-                              titleColor: Colors.white,
-                              backgroundColor: FPHColors.yellow,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Flutter Online Hackathon 2019',
+                            style: TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
                             ),
-                            Padding(padding: EdgeInsets.only(right: 20)),
-                            FPHCtaButton(
-                              onPressed: () {
-                                // TODO: Link to call for sponsors/partnership form
-                              },
-                              title: 'Become a partner',
-                              titleColor: FPHColors.yellow,
-                              backgroundColor: Colors.white,
+                          ),
+                          Text(
+                            'by Flutter Philippines | October 2019',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
                             ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 30)),
-                        Text(
-                          'Be part of the first ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
-                          style: TextStyle(fontSize: 16, color: Colors.black54),
-                        ),
-                        Padding(padding: EdgeInsets.only(bottom: 30)),
-                        FPHPoweredBy(),
-                        Padding(padding: EdgeInsets.only(bottom: 10)),
-                        FPHPartners(),
-                      ],
+                          ),
+                          Padding(padding: EdgeInsets.only(bottom: 50)),
+                          Text(
+                            'With \$2000+ worth of prizes!',
+                            style: TextStyle(
+                              fontSize: 54,
+                              fontWeight: FontWeight.bold,
+                              color: FPHColors.blue,
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(bottom: 10)),
+                          Row(
+                            children: <Widget>[
+                              FPHCtaButton(
+                                onPressed: () {
+                                  // TODO: Link to registration form
+                                },
+                                title: 'Register',
+                                titleColor: Colors.white,
+                                backgroundColor: FPHColors.yellow,
+                              ),
+                              Padding(padding: EdgeInsets.only(right: 20)),
+                              FPHCtaButton(
+                                onPressed: () {
+                                  // TODO: Link to call for sponsors/partnership form
+                                },
+                                title: 'Become a partner',
+                                titleColor: FPHColors.yellow,
+                                backgroundColor: Colors.white,
+                              ),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(bottom: 30)),
+                          Text(
+                            'Be part of the first ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
+                            style:
+                                TextStyle(fontSize: 16, color: Colors.black54),
+                          ),
+                          Padding(padding: EdgeInsets.only(bottom: 30)),
+                          FPHPoweredBy(),
+                          Padding(padding: EdgeInsets.only(bottom: 10)),
+                          FPHPartners(),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -328,78 +332,84 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 50),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Material(
-                          elevation: 12.0,
-                          color: Colors.white,
-                          clipBehavior: Clip.antiAlias,
-                          shadowColor: Colors.black54,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Container(
-                            width: 500,
-                            padding: EdgeInsets.all(30),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SectionHeaderWidget(title: 'Timeline'),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'September 2019',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.blue,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Material(
+                            elevation: 12.0,
+                            color: Colors.white,
+                            clipBehavior: Clip.antiAlias,
+                            shadowColor: Colors.black54,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            child: Container(
+                              width: 500,
+                              padding: EdgeInsets.all(30),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    SectionHeaderWidget(title: 'Timeline'),
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'September 2019',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.blue,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Study Jams (Manila x Cebu)',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      'Study Jams (Manila x Cebu)',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'October 2019',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.red,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'October 2019',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.red,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Flutter Online Hackathon 2019',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      'Flutter Online Hackathon 2019',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'November 2019',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.yellow,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'November 2019',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.yellow,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Announcement of winners at Google DevFest 2019',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      'Announcement of winners at Google DevFest 2019',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -469,69 +479,75 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 50),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Material(
-                          elevation: 12.0,
-                          color: Colors.white,
-                          clipBehavior: Clip.antiAlias,
-                          shadowColor: Colors.black54,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Container(
-                            width: 500,
-                            padding: EdgeInsets.all(30),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SectionHeaderWidget(title: 'Study Jams'),
-                                  Padding(padding: EdgeInsets.only(bottom: 16)),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            isStudyJamShowingManilaSchedule =
-                                                true;
-                                          });
-                                        },
-                                        child: FPHChip(
-                                          title: 'Manila',
-                                          color: Colors.blue,
-                                          isSelected:
-                                              isStudyJamShowingManilaSchedule,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Material(
+                            elevation: 12.0,
+                            color: Colors.white,
+                            clipBehavior: Clip.antiAlias,
+                            shadowColor: Colors.black54,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            child: Container(
+                              width: 500,
+                              padding: EdgeInsets.all(30),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    SectionHeaderWidget(title: 'Study Jams'),
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 16)),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        InkWell(
+                                          onTap: () {
+                                            setState(() {
+                                              isStudyJamShowingManilaSchedule =
+                                                  true;
+                                            });
+                                          },
+                                          child: FPHChip(
+                                            title: 'Manila',
+                                            color: Colors.blue,
+                                            isSelected:
+                                                isStudyJamShowingManilaSchedule,
+                                          ),
                                         ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            isStudyJamShowingManilaSchedule =
-                                                false;
-                                          });
-                                        },
-                                        child: FPHChip(
-                                          title: 'Cebu',
-                                          color: FPHColors.red,
-                                          isSelected:
-                                              !isStudyJamShowingManilaSchedule,
+                                        InkWell(
+                                          onTap: () {
+                                            setState(() {
+                                              isStudyJamShowingManilaSchedule =
+                                                  false;
+                                            });
+                                          },
+                                          child: FPHChip(
+                                            title: 'Cebu',
+                                            color: FPHColors.red,
+                                            isSelected:
+                                                !isStudyJamShowingManilaSchedule,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  _buildStudyJamsScheduleView()
-                                ],
+                                      ],
+                                    ),
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    _buildStudyJamsScheduleView()
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -697,101 +713,107 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 50),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Material(
-                          elevation: 12.0,
-                          color: Colors.white,
-                          clipBehavior: Clip.antiAlias,
-                          shadowColor: Colors.black54,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Container(
-                            width: 500,
-                            padding: EdgeInsets.all(30),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SectionHeaderWidget(
-                                    title: 'Mechanics',
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 16)),
-                                  Text(
-                                    'Members',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.blue,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Material(
+                            elevation: 12.0,
+                            color: Colors.white,
+                            clipBehavior: Clip.antiAlias,
+                            shadowColor: Colors.black54,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            child: Container(
+                              width: 500,
+                              padding: EdgeInsets.all(30),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    SectionHeaderWidget(
+                                      title: 'Mechanics',
                                     ),
-                                  ),
-                                  Text(
-                                    'Gather a team of 4* creative thinkers',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 16)),
+                                    Text(
+                                      'Members',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.blue,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    '*Minimum of 2 and maximum of 4 members.',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                    Text(
+                                      'Gather a team of 4* creative thinkers',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'Submission',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.red,
+                                    Text(
+                                      '*Minimum of 2 and maximum of 4 members.',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Upload your projects to Github',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'Submission',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.red,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'We\'re passionate on supporting the open-source community.',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                    Text(
+                                      'Upload your projects to Github',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'Deployment',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.yellow,
+                                    Text(
+                                      'We\'re passionate on supporting the open-source community.',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Ship that app!',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'Deployment',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.yellow,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Special prizes await those teams who can ship their app to Google Play Store.',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                    Text(
+                                      'Ship that app!',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      'Special prizes await those teams who can ship their app to Google Play Store.',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -861,77 +883,81 @@ class DashboardScreenState extends State<DashboardScreen> {
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 50),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Material(
-                          elevation: 12.0,
-                          color: Colors.white,
-                          clipBehavior: Clip.antiAlias,
-                          shadowColor: Colors.black54,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Container(
-                            width: 500,
-                            padding: EdgeInsets.all(30),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SectionHeaderWidget(title: 'About'),
-                                  Padding(padding: EdgeInsets.only(bottom: 16)),
-                                  Text(
-                                    'The Website',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.blue,
+                  child: FittedBox(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Material(
+                            elevation: 12.0,
+                            color: Colors.white,
+                            clipBehavior: Clip.antiAlias,
+                            shadowColor: Colors.black54,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            child: Container(
+                              width: 500,
+                              padding: EdgeInsets.all(30),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    SectionHeaderWidget(title: 'About'),
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 16)),
+                                    Text(
+                                      'The Website',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.blue,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'We use the technical preview of Flutter Web to develop this website',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      'We use the technical preview of Flutter Web to develop this website',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter here in the Philippines.',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                    Text(
+                                      'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter here in the Philippines.',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(padding: EdgeInsets.only(bottom: 24)),
-                                  Text(
-                                    'Contribution',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: FPHColors.yellow,
+                                    Padding(
+                                        padding: EdgeInsets.only(bottom: 24)),
+                                    Text(
+                                      'Contribution',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.yellow,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Our website is open-source, feel free to submit PRs for fixes, improvements on Github',
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      'Our website is open-source, feel free to submit PRs for fixes, improvements on Github',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'This was made just under 24 hours, but I ran out of coffee!',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black54,
+                                    Text(
+                                      'This was made just under 24 hours, but I ran out of coffee!',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
