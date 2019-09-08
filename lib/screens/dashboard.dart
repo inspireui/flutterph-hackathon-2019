@@ -285,7 +285,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                           ),
                           Padding(padding: EdgeInsets.only(bottom: 30)),
                           Text(
-                            'Be part of the first ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
+                            'Be part of the first-ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
                             style:
                                 TextStyle(fontSize: 16, color: Colors.black54),
                           ),
