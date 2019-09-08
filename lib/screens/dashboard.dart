@@ -377,7 +377,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
+                          : EdgeInsets.only(bottom: (_height * 0.50).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -533,7 +533,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
+                          : EdgeInsets.only(top: (_height * 0.50).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -776,7 +776,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
+                          : EdgeInsets.only(bottom: (_height * 0.50).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -980,7 +980,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
+                          : EdgeInsets.only(top: (_height * 0.50).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
