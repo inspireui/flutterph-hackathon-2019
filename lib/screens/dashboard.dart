@@ -61,22 +61,22 @@ class DashboardPageState extends State<DashboardPage> {
           _pageBackgroundColor = Color(0xfffefef3);
           _opacityTimelineView = 1.0;
           _pageName = "Timeline";
-          _pageTitleFontSize = 120;
+          _pageTitleFontSize = ResponsiveWidget.isLargeScreen(context) ? 120 : 70;
         } else if (_currentPage == 2) {
           _pageBackgroundColor = Color(0xffffd0d2);
           _opacityStudyJamsView = 1.0;
           _pageName = "Study Jams";
-          _pageTitleFontSize = 80;
+          _pageTitleFontSize = ResponsiveWidget.isLargeScreen(context) ? 80 : 50;
         } else if (_currentPage == 3) {
           _pageBackgroundColor = Color(0xffffe6d0);
           _opacityMechanicsView = 1.0;
           _pageName = "Mechanics";
-          _pageTitleFontSize = 100;
+          _pageTitleFontSize = ResponsiveWidget.isLargeScreen(context) ? 100 : 60;
         } else if (_currentPage == 4) {
           _pageBackgroundColor = Color(0xffffefef3);
           _opacityAboutView = 1.0;
           _pageName = "About";
-          _pageTitleFontSize = 90;
+          _pageTitleFontSize = ResponsiveWidget.isLargeScreen(context) ? 85 : 55;
         } else {
           _pageBackgroundColor = Color(0xfffefef3);
           _pageName = "";
@@ -109,13 +109,15 @@ class DashboardPageState extends State<DashboardPage> {
                   alignment: Alignment.topLeft,
                   child: Opacity(
                     opacity: 0.10,
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 500),
                       width: 700,
-                      padding: EdgeInsets.only(top: 30, left: 60),
+                      padding: ResponsiveWidget.isLargeScreen(context) ? EdgeInsets.only(top: 30, left: 60) : EdgeInsets.only(top: 60, left: 20),
                       child: AnimatedDefaultTextStyle(
                         duration: Duration(milliseconds: 250),
                         child: Text(
                           _pageName,
+                          maxLines: 1,
                         ),
                         style: TextStyle(
                             fontSize: _pageTitleFontSize,
