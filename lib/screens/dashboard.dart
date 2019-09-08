@@ -495,9 +495,14 @@ class DashboardPageState extends State<DashboardPage> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: ResponsiveWidget.isLargeScreen(context)
+                      ? Alignment.centerRight
+                      : Alignment.topCenter,
                   child: Container(
                     width: 800,
+                    padding: ResponsiveWidget.isLargeScreen(context)
+                        ? EdgeInsets.all(0)
+                        : EdgeInsets.only(top: (_height * 0.25).toDouble()),
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Image.network(
@@ -509,11 +514,15 @@ class DashboardPageState extends State<DashboardPage> {
               ),
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: ResponsiveWidget.isLargeScreen(context)
+                      ? Alignment.centerLeft
+                      : Alignment.center,
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 50),
+                      padding: ResponsiveWidget.isLargeScreen(context)
+                          ? EdgeInsets.only(right: 50)
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
