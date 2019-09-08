@@ -135,10 +135,10 @@ class DashboardPageState extends State<DashboardPage> {
                     controller: _pageController,
                     children: <Widget>[
                       _buildHeaderView(),
-                      // _buildTimelineView(),
-                      // _buildStudyJamsView(),
-                      // _buildMechanicsView(),
-                      // _buildAboutView()
+                      _buildTimelineView(),
+                      _buildStudyJamsView(),
+                      _buildMechanicsView(),
+                      _buildAboutView()
                     ],
                   ),
                 ),
@@ -192,13 +192,13 @@ class DashboardPageState extends State<DashboardPage> {
   }
 
   void _hideAllViews() {
-    // setState(() {
-    //   _opacityHeaderView = 0.0;
-    //   _opacityTimelineView = 0.0;
-    //   _opacityStudyJamsView = 0.0;
-    //   _opacityMechanicsView = 0.0;
-    //   _opacityAboutView = 0.0;
-    // });
+    setState(() {
+      _opacityHeaderView = 0.0;
+      _opacityTimelineView = 0.0;
+      _opacityStudyJamsView = 0.0;
+      _opacityMechanicsView = 0.0;
+      _opacityAboutView = 0.0;
+    });
   }
 
   Widget _buildHeaderView() {

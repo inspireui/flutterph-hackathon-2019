@@ -36,27 +36,19 @@ class FPHPartners extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Image.network(
-                    'https://via.placeholder.com/200x100',
+                    'https://user-images.githubusercontent.com/20706361/64491600-e9c14780-d29c-11e9-863e-c76c179e891b.png',
                   ),
                 ),
               ),
               Padding(padding: EdgeInsets.only(right: 10)),
               Container(
+                color: Color(0xff131c24),
+                padding: EdgeInsets.only(top: 5, bottom: 5),
                 width: ResponsiveWidget.isLargeScreen(rootContext) ? 175 : 130,
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Image.network(
-                    'https://via.placeholder.com/200x100',
-                  ),
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(right: 10)),
-              Container(
-                width: ResponsiveWidget.isLargeScreen(rootContext) ? 175 : 130,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.network(
-                    'https://via.placeholder.com/200x100',
+                    'https://user-images.githubusercontent.com/20706361/64491559-89caa100-d29c-11e9-89bd-b7bb26846dcd.png',
                   ),
                 ),
               ),
