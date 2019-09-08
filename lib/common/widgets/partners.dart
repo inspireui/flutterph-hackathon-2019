@@ -3,13 +3,15 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/responsive_widget.dart';
+
+import 'widgets.dart';
 
 class FPHPartners extends StatelessWidget {
-  
-  final double width;
+  final BuildContext rootContext;
 
-  const FPHPartners({Key key, this.width}) : super(key: key);
-  
+  const FPHPartners({Key key, this.rootContext}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,48 +19,50 @@ class FPHPartners extends StatelessWidget {
       children: <Widget>[
         Text(
           'Our Event Partners',
+          textScaleFactor:
+              ResponsiveWidget.isLargeScreen(rootContext) ? 1.25 : 1,
           style: TextStyle(
-            // TODO: Declare Dynamic Font Size
-            fontSize: width * 0.0125,
             fontWeight: FontWeight.bold,
             color: Colors.black54,
           ),
         ),
         Padding(padding: EdgeInsets.only(bottom: 10)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: width * 0.125,
-              child: FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Image.network(
-                  'https://via.placeholder.com/200x100',
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: ResponsiveWidget.isLargeScreen(rootContext) ? 175 : 130,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                    'https://via.placeholder.com/200x100',
+                  ),
                 ),
               ),
-            ),
-            Padding(padding: EdgeInsets.only(right: 10)),
-            Container(
-              width: width * 0.125,
-              child: FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Image.network(
-                  'https://via.placeholder.com/200x100',
+              Padding(padding: EdgeInsets.only(right: 10)),
+              Container(
+                width: ResponsiveWidget.isLargeScreen(rootContext) ? 175 : 130,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                    'https://via.placeholder.com/200x100',
+                  ),
                 ),
               ),
-            ),
-            Padding(padding: EdgeInsets.only(right: 10)),
-            Container(
-              width: width * 0.125,
-              child: FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Image.network(
-                  'https://via.placeholder.com/200x100',
+              Padding(padding: EdgeInsets.only(right: 10)),
+              Container(
+                width: ResponsiveWidget.isLargeScreen(rootContext) ? 175 : 130,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                    'https://via.placeholder.com/200x100',
+                  ),
                 ),
               ),
-            ),
-          ],
-        )
+            ],
+          ),
+        ),
       ],
     );
   }

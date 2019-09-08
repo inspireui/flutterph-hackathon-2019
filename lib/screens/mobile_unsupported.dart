@@ -50,7 +50,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     FPHCtaButton(
-                      width: _width,
+                      rootContext: context,
                       onPressed: () {
                         // TODO: Link to registration form
                       },

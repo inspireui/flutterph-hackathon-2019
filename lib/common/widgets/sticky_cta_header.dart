@@ -8,22 +8,21 @@ import 'package:flutterph_hackathon2019/theme/theme.dart';
 import 'widgets.dart';
 
 class FPHStickyCtaHeader extends StatelessWidget {
-  
-  final double width;
+  final BuildContext rootContext;
 
-  const FPHStickyCtaHeader({Key key, this.width}) : super(key: key);
+  const FPHStickyCtaHeader({Key key, this.rootContext}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: width * 0.030,
-      width: width * 0.125,
+      width: ResponsiveWidget.isLargeScreen(context) ? 150 : 100,
+      height: ResponsiveWidget.isLargeScreen(context) ? 48 : 32,
       padding: EdgeInsets.only(top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FPHCtaButton(
-            width: width,
+            rootContext: rootContext,
             onPressed: () {
               // TODO: Link to registration form
             },

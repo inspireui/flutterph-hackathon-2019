@@ -3,13 +3,13 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 
 class FPHPoweredBy extends StatelessWidget {
-  
-  final double width;
+  final BuildContext rootContext;
 
-  const FPHPoweredBy({Key key, this.width}) : super(key: key);
-  
+  const FPHPoweredBy({Key key, this.rootContext}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,25 +17,22 @@ class FPHPoweredBy extends StatelessWidget {
       children: <Widget>[
         Text(
           'Powered By',
+          textScaleFactor:
+              ResponsiveWidget.isLargeScreen(rootContext) ? 1.25 : 1,
           style: TextStyle(
-            // TODO: Declare Dynamic Font Size
-            fontSize: width * 0.0125,
             fontWeight: FontWeight.bold,
             color: Colors.black54,
           ),
         ),
         Padding(padding: EdgeInsets.only(bottom: 10)),
         Container(
-          width: width * 0.15,
+          width: ResponsiveWidget.isLargeScreen(rootContext) ? 200 : 150,
           child: FittedBox(
             fit: BoxFit.fitWidth,
             child: Image.network(
               'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
             ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 50),
         ),
       ],
     );

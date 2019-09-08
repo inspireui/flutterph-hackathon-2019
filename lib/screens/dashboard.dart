@@ -4,6 +4,7 @@
 
 import 'package:flutter_web/material.dart';
 import 'package:flutterph_hackathon2019/common/widgets/page_control.dart';
+import 'package:flutterph_hackathon2019/common/widgets/responsive_widget.dart';
 import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 import 'package:flutterph_hackathon2019/theme/colors.dart';
 import 'package:flutterph_hackathon2019/theme/theme.dart';
@@ -101,8 +102,6 @@ class DashboardPageState extends State<DashboardPage> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 1000),
           color: _pageBackgroundColor,
-          height: _height,
-          width: _width,
           child: Stack(
             children: <Widget>[
               Positioned.fill(
@@ -127,25 +126,39 @@ class DashboardPageState extends State<DashboardPage> {
                   ),
                 ),
               ),
-              PageView(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                controller: _pageController,
-                children: <Widget>[
-                  _buildHeaderView(),
-                  _buildTimelineView(),
-                  _buildStudyJamsView(),
-                  _buildMechanicsView(),
-                  _buildAboutView()
-                ],
+              Positioned.fill(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: PageView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    controller: _pageController,
+                    children: <Widget>[
+                      _buildHeaderView(),
+                      // _buildTimelineView(),
+                      // _buildStudyJamsView(),
+                      // _buildMechanicsView(),
+                      // _buildAboutView()
+                    ],
+                  ),
+                ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 20),
-                  child: FPHPageIndicator(
-                    currentPage: _currentPage,
-                    maxPage: _maxPage,
+                  child: ResponsiveWidget(
+                    largeScreen: FPHPageIndicator(
+                      currentPage: _currentPage,
+                      maxPage: _maxPage,
+                    ),
+                    // HIde page indicator on landing page for small screens
+                    smallScreen: _currentPage == 1
+                        ? FPHPageIndicator(
+                            currentPage: _currentPage,
+                            maxPage: _maxPage,
+                          )
+                        : Container(),
                   ),
                 ),
               ),
@@ -166,7 +179,7 @@ class DashboardPageState extends State<DashboardPage> {
                       child: Padding(
                         padding: EdgeInsets.only(right: 20),
                         child: FPHStickyCtaHeader(
-                          width: _width,
+                          rootContext: context,
                         ),
                       ),
                     )
@@ -179,13 +192,13 @@ class DashboardPageState extends State<DashboardPage> {
   }
 
   void _hideAllViews() {
-    setState(() {
-      _opacityHeaderView = 0.0;
-      _opacityTimelineView = 0.0;
-      _opacityStudyJamsView = 0.0;
-      _opacityMechanicsView = 0.0;
-      _opacityAboutView = 0.0;
-    });
+    // setState(() {
+    //   _opacityHeaderView = 0.0;
+    //   _opacityTimelineView = 0.0;
+    //   _opacityStudyJamsView = 0.0;
+    //   _opacityMechanicsView = 0.0;
+    //   _opacityAboutView = 0.0;
+    // });
   }
 
   Widget _buildHeaderView() {
@@ -194,121 +207,123 @@ class DashboardPageState extends State<DashboardPage> {
       opacity: _opacityHeaderView,
       child: Center(
         child: Container(
-          width: _width * 0.80,
+          width: _width * 0.90,
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: Stack(
             children: <Widget>[
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: Container(
-                      width: _width * 0.55,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.network(
-                          'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    padding: EdgeInsets.only(top: 50),
-                    width: _width * 0.10,
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                        'https://avatars1.githubusercontent.com/u/47053319?s=400&u=faa28fed8002f59147835bb25df5c00f4df2cfe2&v=4',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Positioned.fill(
+              //   child: Align(
+              //     alignment: Alignment.centerRight,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: Container(
+              //         width: _width * 0.55,
+              //         child: FittedBox(
+              //           fit: BoxFit.fitWidth,
+              //           child: Image.network(
+              //             'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // Positioned.fill(
+              //   child: Align(
+              //     alignment: Alignment.topRight,
+              //     child: Container(
+              //       padding: EdgeInsets.only(top: 50),
+              //       width: _width * 0.10,
+              //       child: FittedBox(
+              //         fit: BoxFit.fitWidth,
+              //         child: Image.network(
+              //           'https://avatars1.githubusercontent.com/u/47053319?s=400&u=faa28fed8002f59147835bb25df5c00f4df2cfe2&v=4',
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 50),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Flutter Online Hackathon 2019',
+                        textScaleFactor:
+                            ResponsiveWidget.isLargeScreen(context) ? 2.5 : 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: FPHColors.yellow,
+                        ),
+                      ),
+                      Text(
+                        'by Flutter Philippines | October 2019',
+                        textScaleFactor:
+                            ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(bottom: 50)),
+                      Text(
+                        'With \$2000+ worth of prizes to win!',
+                        textScaleFactor:
+                            ResponsiveWidget.isLargeScreen(context) ? 3.5 : 2,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: FPHColors.blue,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(bottom: 15)),
+                      Row(
                         children: <Widget>[
-                          Text(
-                            'Flutter Online Hackathon 2019',
-                            style: TextStyle(
-                              // TODO: Declare Dynamic Font Size
-                              fontSize: _width * 0.025,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87,
-                            ),
+                          FPHCtaButton(
+                            rootContext: context,
+                            onPressed: () {
+                              // TODO: Link to registration form
+                            },
+                            title: 'Register',
+                            titleColor: Colors.white,
+                            backgroundColor: FPHColors.yellow,
                           ),
-                          Text(
-                            'by Flutter Philippines | October 2019',
-                            style: TextStyle(
-                              // TODO: Declare Dynamic Font Size
-                              fontSize: _width * 0.015,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54,
-                            ),
+                          Padding(padding: EdgeInsets.only(right: 20)),
+                          FPHCtaButton(
+                            rootContext: context,
+                            onPressed: () {
+                              html.window.location.href =
+                                  "http://bit.ly/flutterph-hackathon2019-sponsors";
+                            },
+                            title: 'Become a partner',
+                            titleColor: FPHColors.yellow,
+                            backgroundColor: Colors.white,
                           ),
-                          Padding(padding: EdgeInsets.only(bottom: 50)),
-                          Text(
-                            'With \$2000+ worth of prizes!',
-                            style: TextStyle(
-                              // TODO: Declare Dynamic Font Size
-                              fontSize: _width * 0.035,
-                              fontWeight: FontWeight.bold,
-                              color: FPHColors.blue,
-                            ),
-                          ),
-                          Padding(padding: EdgeInsets.only(bottom: 10)),
-                          Row(
-                            children: <Widget>[
-                              FPHCtaButton(
-                                width: _width,
-                                onPressed: () {
-                                  // TODO: Link to registration form
-                                },
-                                title: 'Register',
-                                titleColor: Colors.white,
-                                backgroundColor: FPHColors.yellow,
-                              ),
-                              Padding(padding: EdgeInsets.only(right: 20)),
-                              FPHCtaButton(
-                                width: _width,
-                                onPressed: () {
-                                  html.window.location.href =
-                                      "http://bit.ly/flutterph-hackathon2019-sponsors";
-                                },
-                                title: 'Become a partner',
-                                titleColor: FPHColors.yellow,
-                                backgroundColor: Colors.white,
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(bottom: 30)),
-                          Text(
-                            'Be part of the first-ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
-                            style: TextStyle(
-                              // TODO: Declare Dynamic Font Size
-                              fontSize: _width * 0.0125,
-                              color: Colors.black54,
-                            ),
-                          ),
-                          Padding(padding: EdgeInsets.only(bottom: 30)),
-                          FPHPoweredBy(width: _width),
-                          Padding(padding: EdgeInsets.only(bottom: 10)),
-                          FPHPartners(width: _width),
                         ],
                       ),
-                    ),
+                      Padding(padding: EdgeInsets.only(bottom: 30)),
+                      Container(
+                        width: ResponsiveWidget.isLargeScreen(context)
+                            ? _width * 0.50
+                            : double.infinity,
+                        child: Text(
+                          'Be part of the first-ever Flutter Hackathon here in the Philippines! Our goal is to help teams, developers, and companies develop and ship apps using Flutter/Dart.',
+                          textScaleFactor:
+                              ResponsiveWidget.isLargeScreen(context)
+                                  ? 1.25
+                                  : 1,
+                          style: TextStyle(
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(bottom: 30)),
+                      FPHPoweredBy(rootContext: context),
+                      Padding(padding: EdgeInsets.only(bottom: 20)),
+                      FPHPartners(rootContext: context),
+                    ],
                   ),
                 ),
               ),
