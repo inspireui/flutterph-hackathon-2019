@@ -28,9 +28,9 @@ class HackathonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     // TODO: Support more devices soon
-    return DashboardScreen();
+    return DashboardPage();
     // if (width > 600) {
-    //   return DashboardScreen();
+    //   return DashboardPage();
     // } else {
     //   return MobileUnsupportedScreen();
     // }

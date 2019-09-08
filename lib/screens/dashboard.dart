@@ -9,14 +9,14 @@ import 'package:flutterph_hackathon2019/theme/colors.dart';
 import 'package:flutterph_hackathon2019/theme/theme.dart';
 import 'dart:html' as html;
 
-class DashboardScreen extends StatefulWidget {
+class DashboardPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return DashboardScreenState();
+    return DashboardPageState();
   }
 }
 
-class DashboardScreenState extends State<DashboardScreen> {
+class DashboardPageState extends State<DashboardPage> {
   // Web
   double _height = 0.0;
   double _width = 0.0;
