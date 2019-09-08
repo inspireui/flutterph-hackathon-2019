@@ -211,38 +211,44 @@ class DashboardPageState extends State<DashboardPage> {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Stack(
             children: <Widget>[
-              // Positioned.fill(
-              //   child: Align(
-              //     alignment: Alignment.centerRight,
-              //     child: Opacity(
-              //       opacity: 0.5,
-              //       child: Container(
-              //         width: _width * 0.55,
-              //         child: FittedBox(
-              //           fit: BoxFit.fitWidth,
-              //           child: Image.network(
-              //             'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
-              //           ),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // Positioned.fill(
-              //   child: Align(
-              //     alignment: Alignment.topRight,
-              //     child: Container(
-              //       padding: EdgeInsets.only(top: 50),
-              //       width: _width * 0.10,
-              //       child: FittedBox(
-              //         fit: BoxFit.fitWidth,
-              //         child: Image.network(
-              //           'https://avatars1.githubusercontent.com/u/47053319?s=400&u=faa28fed8002f59147835bb25df5c00f4df2cfe2&v=4',
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              Positioned.fill(
+                child: Opacity(
+                  opacity: ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Opacity(
+                      opacity: 0.5,
+                      child: Container(
+                        width: _width * 0.55,
+                        child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Image.network(
+                            'https://user-images.githubusercontent.com/20706361/64470904-eb93e980-d17c-11e9-95a1-fd4d8c8641c8.png',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Opacity(
+                  opacity: ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      padding: EdgeInsets.only(top: 50),
+                      width: _width * 0.10,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                          'https://avatars1.githubusercontent.com/u/47053319?s=400&u=faa28fed8002f59147835bb25df5c00f4df2cfe2&v=4',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerLeft,
