@@ -148,17 +148,12 @@ class DashboardPageState extends State<DashboardPage> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: ResponsiveWidget(
+                    // Only show page indicator on large screens
                     largeScreen: FPHPageIndicator(
                       currentPage: _currentPage,
                       maxPage: _maxPage,
                     ),
-                    // HIde page indicator on landing page for small screens
-                    smallScreen: _currentPage == 1
-                        ? FPHPageIndicator(
-                            currentPage: _currentPage,
-                            maxPage: _maxPage,
-                          )
-                        : Container(),
+                    smallScreen: Container(),
                   ),
                 ),
               ),
