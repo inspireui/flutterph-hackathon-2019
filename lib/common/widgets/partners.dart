@@ -5,6 +5,11 @@
 import 'package:flutter_web/material.dart';
 
 class FPHPartners extends StatelessWidget {
+  
+  final double width;
+
+  const FPHPartners({Key key, this.width}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,7 +18,8 @@ class FPHPartners extends StatelessWidget {
         Text(
           'Our Event Partners',
           style: TextStyle(
-            fontSize: 16,
+            // TODO: Declare Dynamic Font Size
+            fontSize: width * 0.0125,
             fontWeight: FontWeight.bold,
             color: Colors.black54,
           ),
@@ -23,7 +29,7 @@ class FPHPartners extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              width: 200,
+              width: width * 0.125,
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Image.network(
@@ -33,7 +39,7 @@ class FPHPartners extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(right: 10)),
             Container(
-              width: 200,
+              width: width * 0.125,
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Image.network(
@@ -43,7 +49,7 @@ class FPHPartners extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(right: 10)),
             Container(
-              width: 200,
+              width: width * 0.125,
               child: FittedBox(
                 fit: BoxFit.fitWidth,
                 child: Image.network(

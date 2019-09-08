@@ -11,6 +11,7 @@ import 'dart:html' as html;
 class MobileUnsupportedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xfffefef3),
       body: Center(
@@ -49,6 +50,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     FPHCtaButton(
+                      width: _width,
                       onPressed: () {
                         // TODO: Link to registration form
                       },

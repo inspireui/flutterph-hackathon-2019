@@ -9,16 +9,21 @@ import 'widgets.dart';
 
 class FPHStickyCtaHeader extends StatelessWidget {
   
+  final double width;
+
+  const FPHStickyCtaHeader({Key key, this.width}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56,
-      width: 200,
+      height: width * 0.030,
+      width: width * 0.125,
       padding: EdgeInsets.only(top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FPHCtaButton(
+            width: width,
             onPressed: () {
               // TODO: Link to registration form
             },

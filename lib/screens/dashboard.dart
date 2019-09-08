@@ -164,8 +164,11 @@ class DashboardScreenState extends State<DashboardScreen> {
                   ? Align(
                       alignment: Alignment.topRight,
                       child: Padding(
-                          padding: EdgeInsets.only(right: 20),
-                          child: FPHStickyCtaHeader()),
+                        padding: EdgeInsets.only(right: 20),
+                        child: FPHStickyCtaHeader(
+                          width: _width,
+                        ),
+                      ),
                     )
                   : Container(),
             ],
@@ -191,7 +194,7 @@ class DashboardScreenState extends State<DashboardScreen> {
       opacity: _opacityHeaderView,
       child: Center(
         child: Container(
-          width: _width / 1.25,
+          width: _width * 0.80,
           child: Stack(
             children: <Widget>[
               Positioned.fill(
@@ -200,7 +203,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                   child: Opacity(
                     opacity: 0.5,
                     child: Container(
-                      width: 700,
+                      width: _width * 0.55,
                       child: FittedBox(
                         fit: BoxFit.fitWidth,
                         child: Image.network(
@@ -216,7 +219,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                   alignment: Alignment.topRight,
                   child: Container(
                     padding: EdgeInsets.only(top: 50),
-                    width: 150,
+                    width: _width * 0.10,
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Image.network(
@@ -240,7 +243,8 @@ class DashboardScreenState extends State<DashboardScreen> {
                           Text(
                             'Flutter Online Hackathon 2019',
                             style: TextStyle(
-                              fontSize: 36,
+                              // TODO: Declare Dynamic Font Size
+                              fontSize: _width * 0.025,
                               fontWeight: FontWeight.bold,
                               color: Colors.black87,
                             ),
@@ -248,7 +252,8 @@ class DashboardScreenState extends State<DashboardScreen> {
                           Text(
                             'by Flutter Philippines | October 2019',
                             style: TextStyle(
-                              fontSize: 16,
+                              // TODO: Declare Dynamic Font Size
+                              fontSize: _width * 0.015,
                               fontWeight: FontWeight.bold,
                               color: Colors.black54,
                             ),
@@ -257,7 +262,8 @@ class DashboardScreenState extends State<DashboardScreen> {
                           Text(
                             'With \$2000+ worth of prizes!',
                             style: TextStyle(
-                              fontSize: 54,
+                              // TODO: Declare Dynamic Font Size
+                              fontSize: _width * 0.035,
                               fontWeight: FontWeight.bold,
                               color: FPHColors.blue,
                             ),
@@ -266,6 +272,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                           Row(
                             children: <Widget>[
                               FPHCtaButton(
+                                width: _width,
                                 onPressed: () {
                                   // TODO: Link to registration form
                                 },
@@ -275,8 +282,10 @@ class DashboardScreenState extends State<DashboardScreen> {
                               ),
                               Padding(padding: EdgeInsets.only(right: 20)),
                               FPHCtaButton(
+                                width: _width,
                                 onPressed: () {
-                                  html.window.location.href = "http://bit.ly/flutterph-hackathon2019-sponsors";
+                                  html.window.location.href =
+                                      "http://bit.ly/flutterph-hackathon2019-sponsors";
                                 },
                                 title: 'Become a partner',
                                 titleColor: FPHColors.yellow,
@@ -287,13 +296,16 @@ class DashboardScreenState extends State<DashboardScreen> {
                           Padding(padding: EdgeInsets.only(bottom: 30)),
                           Text(
                             'Be part of the first-ever Flutter Hackathon here in the Philippines!\nOur goal is to help teams, developers, and companies\ndevelop and ship apps using Flutter/Dart.',
-                            style:
-                                TextStyle(fontSize: 16, color: Colors.black54),
+                            style: TextStyle(
+                              // TODO: Declare Dynamic Font Size
+                              fontSize: _width * 0.0125,
+                              color: Colors.black54,
+                            ),
                           ),
                           Padding(padding: EdgeInsets.only(bottom: 30)),
-                          FPHPoweredBy(),
+                          FPHPoweredBy(width: _width),
                           Padding(padding: EdgeInsets.only(bottom: 10)),
-                          FPHPartners(),
+                          FPHPartners(width: _width),
                         ],
                       ),
                     ),

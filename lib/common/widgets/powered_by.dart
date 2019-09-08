@@ -5,6 +5,11 @@
 import 'package:flutter_web/material.dart';
 
 class FPHPoweredBy extends StatelessWidget {
+  
+  final double width;
+
+  const FPHPoweredBy({Key key, this.width}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,14 +18,15 @@ class FPHPoweredBy extends StatelessWidget {
         Text(
           'Powered By',
           style: TextStyle(
-            fontSize: 16,
+            // TODO: Declare Dynamic Font Size
+            fontSize: width * 0.0125,
             fontWeight: FontWeight.bold,
             color: Colors.black54,
           ),
         ),
         Padding(padding: EdgeInsets.only(bottom: 10)),
         Container(
-          width: 200,
+          width: width * 0.15,
           child: FittedBox(
             fit: BoxFit.fitWidth,
             child: Image.network(

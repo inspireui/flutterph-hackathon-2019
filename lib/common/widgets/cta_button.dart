@@ -5,17 +5,18 @@
 import 'package:flutter_web/material.dart';
 
 class FPHCtaButton extends StatelessWidget {
+  final double width;
   final Function onPressed;
   final String title;
   final Color titleColor;
   final Color backgroundColor;
 
-  const FPHCtaButton({Key key, this.onPressed, this.title, this.titleColor, this.backgroundColor}) : super(key: key);
+  const FPHCtaButton({Key key, this.width, this.onPressed, this.title, this.titleColor, this.backgroundColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 12.0,
+      elevation: width * 0.08,
       color: backgroundColor,
       clipBehavior: Clip.antiAlias,
       shadowColor: Colors.black54,
@@ -23,14 +24,15 @@ class FPHCtaButton extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         child: Container(
-          width: 175,
-          height: 48,
+          width: width * 0.110,
+          height: width * 0.030,
           child: Center(
             child: Text(
               title,
               style: TextStyle(
                 color: titleColor,
-                fontSize: 16,
+                // TODO: Declare Dynamic Font Size
+                fontSize: width * 0.0125,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
