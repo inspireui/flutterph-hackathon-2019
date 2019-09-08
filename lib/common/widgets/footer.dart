@@ -6,11 +6,12 @@ import 'package:flutter_web/material.dart';
 import 'dart:html' as html;
 
 import 'package:flutterph_hackathon2019/common/constants/constants.dart';
+import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 
 class FPHFooter extends StatelessWidget {
-  final double height;
+  final BuildContext rootContext;
 
-  const FPHFooter({Key key, this.height}) : super(key: key);
+  const FPHFooter({Key key, this.rootContext}) : super(key: key);
 
   // TODO: At this time, desktop UI interactions are not fully complete, so a UI built with flutter_web may feel like a mobile app, even when running on a desktop browser.
   // https://stackoverflow.com/questions/56512036/how-do-i-link-http-url-to-flutter-web
@@ -18,20 +19,37 @@ class FPHFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          _buildFooterLinkTextView(
-            'Website by Flutter Philippines',
-            FPHWebsiteLinks.FLUTTER_PH,
-          ),
-          _buildFooterDivider(),
-          _buildFooterLinkTextView(
-            'Illustrations by https://icons8.com',
-            FPHWebsiteLinks.ICONS8,
-          ),
-        ],
+      height: ResponsiveWidget.isLargeScreen(context) ? 100 : 150,
+      child: ResponsiveWidget(
+        largeScreen: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildFooterLinkTextView(
+              'Website by Flutter Philippines',
+              FPHWebsiteLinks.FLUTTER_PH,
+            ),
+            _buildFooterDivider(),
+            _buildFooterLinkTextView(
+              'Illustrations by https://icons8.com',
+              FPHWebsiteLinks.ICONS8,
+            ),
+          ],
+        ),
+        smallScreen: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildFooterLinkTextView(
+              'Website by Flutter Philippines',
+              FPHWebsiteLinks.FLUTTER_PH,
+            ),
+            Padding(padding: EdgeInsets.only(bottom: 20)),
+            _buildFooterLinkTextView(
+              'Illustrations by https://icons8.com',
+              FPHWebsiteLinks.ICONS8,
+            ),
+          ],
+        ),
       ),
     );
   }

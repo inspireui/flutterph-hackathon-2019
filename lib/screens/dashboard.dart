@@ -162,7 +162,7 @@ class DashboardPageState extends State<DashboardPage> {
                   ? Align(
                       alignment: Alignment.bottomCenter,
                       child: FPHFooter(
-                        height: _height * 0.05,
+                        rootContext: context,
                       ),
                     )
                   : Container(),
