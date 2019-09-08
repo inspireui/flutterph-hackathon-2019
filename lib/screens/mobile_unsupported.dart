@@ -30,7 +30,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
                 Text(
-                  'Flutter Online Hackathon 2019',
+                  'Flutter PH Online Hackathon 2019',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
