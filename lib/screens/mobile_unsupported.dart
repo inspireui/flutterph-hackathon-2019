@@ -6,6 +6,7 @@ import 'package:flutter_web/material.dart';
 
 import '../common/widgets/widgets.dart';
 import '../theme/theme.dart';
+import 'dart:html' as html;
 
 class MobileUnsupportedScreen extends StatelessWidget {
   @override
@@ -58,7 +59,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                     Padding(padding: EdgeInsets.only(bottom: 20)),
                     FPHCtaButton(
                       onPressed: () {
-                        // TODO: Link to call for sponsors/partnership form
+                        html.window.location.href = "http://bit.ly/flutterph-hackathon2019-sponsors";
                       },
                       title: 'Become a partner',
                       titleColor: FPHColors.yellow,
