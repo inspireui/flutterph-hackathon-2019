@@ -212,6 +212,21 @@ class DashboardScreenState extends State<DashboardScreen> {
               ),
               Positioned.fill(
                 child: Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    padding: EdgeInsets.only(top: 50),
+                    width: 150,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.network(
+                        'https://avatars1.githubusercontent.com/u/47053319?s=400&u=faa28fed8002f59147835bb25df5c00f4df2cfe2&v=4',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Align(
                   alignment: Alignment.centerLeft,
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
@@ -779,7 +794,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'Let\'s be fair with everyone, start working on your projects during the hackathon!',
+                                      'Let\'s be fair with everyone, start working on your projects during the hackathon.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
