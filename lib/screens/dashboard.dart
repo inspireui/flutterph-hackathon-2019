@@ -377,7 +377,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       'October 2019',
                                       style: TextStyle(
                                         fontSize: 16,
-                                        color: FPHColors.red,
+                                        color: FPHColors.yellow,
                                       ),
                                     ),
                                     Text(
@@ -393,7 +393,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       'November 2019',
                                       style: TextStyle(
                                         fontSize: 16,
-                                        color: FPHColors.yellow,
+                                        color: FPHColors.red,
                                       ),
                                     ),
                                     Text(
@@ -630,7 +630,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Recruitday, Inc., 5th floor Paseo Center, Makati City',
+            'Venue',
             style: TextStyle(
               fontSize: 16,
               color: Colors.black54,
@@ -736,7 +736,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     SectionHeaderWidget(
-                                      title: 'Mechanics',
+                                      title: 'Hackathon Mechanics',
                                     ),
                                     Padding(
                                         padding: EdgeInsets.only(bottom: 16)),
@@ -762,7 +762,32 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
+                                      padding: EdgeInsets.only(bottom: 24),
+                                    ),
+                                    Text(
+                                      'Theme',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: FPHColors.yellow,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Will be announced after the study jams',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Let\'s be fair with everyone, start working on your projects during the hackathon!',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 24),
+                                    ),
                                     Text(
                                       'Submission',
                                       style: TextStyle(
@@ -790,7 +815,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       'Deployment',
                                       style: TextStyle(
                                         fontSize: 16,
-                                        color: FPHColors.yellow,
+                                        color: FPHColors.blue,
                                       ),
                                     ),
                                     Text(
