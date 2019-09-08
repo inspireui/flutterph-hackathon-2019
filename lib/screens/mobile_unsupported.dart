@@ -39,7 +39,7 @@ class MobileUnsupportedScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  'Flutter for Web is on technical preview. We\'re doing our best to support responsive widgets for mobile!',
+                  'Flutter for Web is on technical preview. We\'re doing our best to support responsive widgets on mobile!',
                   style: TextStyle(
                     fontSize: 12,
                   ),
