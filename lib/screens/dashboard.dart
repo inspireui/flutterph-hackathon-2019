@@ -206,7 +206,7 @@ class DashboardPageState extends State<DashboardPage> {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Opacity(
-                      opacity: 0.5,
+                      opacity: 0.10,
                       child: Container(
                         width: _width * 0.55,
                         child: FittedBox(
@@ -870,7 +870,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'We\'re passionate on supporting the open-source community. Demo videos is required if app is not uploaded to Google Play Store.',
+                                      'We\'re passionate on supporting the open-source community. Demos are required, it can be in a form of video, an uploaded app to Google Play Store, or even a hosted Flutter Web project!',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
