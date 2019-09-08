@@ -836,14 +836,14 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Upload your projects to Github',
+                                      'Upload your projects on Github.',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     Text(
-                                      'We\'re passionate on supporting the open-source community.',
+                                      'We\'re passionate on supporting the open-source community. Demo videos will be asked if app is not uploaded to the Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -866,7 +866,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Special prizes await those teams who can ship their app to Google Play Store.',
+                                      'Special prizes await those teams who can ship their app to the Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -933,9 +933,14 @@ class DashboardPageState extends State<DashboardPage> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: ResponsiveWidget.isLargeScreen(context)
+                      ? Alignment.centerRight
+                      : Alignment.topCenter,
                   child: Container(
                     width: 800,
+                    padding: ResponsiveWidget.isLargeScreen(context)
+                        ? EdgeInsets.all(0)
+                        : EdgeInsets.only(top: (_height * 0.25).toDouble()),
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Image.network(
@@ -947,10 +952,15 @@ class DashboardPageState extends State<DashboardPage> {
               ),
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: ResponsiveWidget.isLargeScreen(context)
+                      ? Alignment.centerLeft
+                      : Alignment.center,
                   child: FittedBox(
+                    fit: BoxFit.fitWidth,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 50),
+                      padding: ResponsiveWidget.isLargeScreen(context)
+                          ? EdgeInsets.only(right: 50)
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
