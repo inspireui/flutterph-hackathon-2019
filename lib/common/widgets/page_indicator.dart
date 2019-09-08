@@ -3,15 +3,19 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
+import 'package:flutterph_hackathon2019/common/widgets/responsive_widget.dart';
+import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
 import 'dart:math';
 
 import 'package:flutterph_hackathon2019/theme/theme.dart';
 
 class FPHPageIndicator extends StatefulWidget {
+  final BuildContext rootContext;
   final currentPage;
   final maxPage;
 
-  const FPHPageIndicator({Key key, this.currentPage, this.maxPage})
+  const FPHPageIndicator(
+      {Key key, this.rootContext, this.currentPage, this.maxPage})
       : super(key: key);
 
   @override
@@ -31,6 +35,8 @@ class FPHPageIndicatorState extends State<FPHPageIndicator> {
 
   @override
   void initState() {
+    _circleSize = ResponsiveWidget.isLargeScreen(widget.rootContext) ? 10 : 5;
+
     // TODO: implement initState
     super.initState();
   }
@@ -44,7 +50,7 @@ class FPHPageIndicatorState extends State<FPHPageIndicator> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 20,
+      width: ResponsiveWidget.isLargeScreen(widget.rootContext) ? 20 : 10,
       alignment: Alignment.center,
       child: Center(
         child: ListView.builder(
