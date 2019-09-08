@@ -478,7 +478,7 @@ class DashboardScreenState extends State<DashboardScreen> {
               ),
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Padding(
@@ -868,7 +868,7 @@ class DashboardScreenState extends State<DashboardScreen> {
             children: <Widget>[
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: Container(
                     width: 800,
                     child: FittedBox(
@@ -882,7 +882,7 @@ class DashboardScreenState extends State<DashboardScreen> {
               ),
               Positioned.fill(
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: FittedBox(
                     child: Padding(
                       padding: EdgeInsets.only(right: 50),
@@ -938,14 +938,14 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'Our website is open-source, feel free to submit PRs for fixes, improvements on Github',
+                                      'Our website is open-source*, feel free to submit PRs for fixes, improvements on Github',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     Text(
-                                      'This was made just under 24 hours, but I ran out of coffee!',
+                                      'This was made just under 24 hours, but I ran out of coffee! *We\'re just cleaning it up for you.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,

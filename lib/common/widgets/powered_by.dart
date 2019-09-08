@@ -11,7 +11,7 @@ class FPHPoweredBy extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Powered by',
+          'Powered By',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

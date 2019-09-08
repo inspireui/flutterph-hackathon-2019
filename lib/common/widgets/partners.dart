@@ -11,7 +11,7 @@ class FPHPartners extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Our Partners',
+          'Our Event Partners',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
