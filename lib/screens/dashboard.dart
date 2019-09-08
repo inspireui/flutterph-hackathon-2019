@@ -171,19 +171,6 @@ class DashboardPageState extends State<DashboardPage> {
                       ),
                     )
                   : Container(),
-
-              // Only show the sticky CTA button after the first page
-              _currentPage != 0
-                  ? Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 20),
-                        child: FPHStickyCtaHeader(
-                          rootContext: context,
-                        ),
-                      ),
-                    )
-                  : Container(),
             ],
           ),
         ),

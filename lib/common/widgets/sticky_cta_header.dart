@@ -15,8 +15,8 @@ class FPHStickyCtaHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: ResponsiveWidget.isLargeScreen(context) ? 150 : 100,
-      height: ResponsiveWidget.isLargeScreen(context) ? 48 : 32,
+      width: ResponsiveWidget.isLargeScreen(context) ? 180 : 130,
+      height: ResponsiveWidget.isLargeScreen(context) ? 58 : 36,
       padding: EdgeInsets.only(top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
