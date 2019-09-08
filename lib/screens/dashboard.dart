@@ -962,7 +962,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter here in the Philippines.',
+                                      'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter, here in the Philippines.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
