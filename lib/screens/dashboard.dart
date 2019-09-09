@@ -881,7 +881,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Let\'s be fair with everyone, start working on your projects during the hackathon.',
+                                      'Let\'s be fair with everyone, start working on your projects on the event time.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -905,7 +905,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'We\'re passionate on supporting the open-source community. Showcase your project in a form of demo video, upload it to Google Play Store, or host your Flutter Web project online!',
+                                      'We\'re passionate in supporting the open-source community. Showcase your project in a form of demo video, upload it to Google Play Store, or host your Flutter Web project online!',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -928,7 +928,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Special prizes await those teams who can ship their apps to Google Play Store.',
+                                      'Special prizes await for those teams who can ship their apps to Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
