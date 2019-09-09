@@ -208,7 +208,9 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Opacity(
                       opacity: 0.10,
                       child: Container(
-                        width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
+                        width: ResponsiveWidget.isLargeScreen(context)
+                            ? _width * 0.55
+                            : _width,
                         child: FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Image.network(
@@ -360,7 +362,9 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
                   child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
+                    width: ResponsiveWidget.isLargeScreen(context)
+                        ? _width * 0.55
+                        : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
@@ -395,7 +399,9 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
+                              width: ResponsiveWidget.isLargeScreen(context)
+                                  ? _width * 0.35
+                                  : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -516,7 +522,9 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerRight
                       : Alignment.topCenter,
                   child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
+                    width: ResponsiveWidget.isLargeScreen(context)
+                        ? _width * 0.55
+                        : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(top: (_height * 0.25).toDouble()),
@@ -551,7 +559,9 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
+                              width: ResponsiveWidget.isLargeScreen(context)
+                                  ? _width * 0.35
+                                  : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -668,12 +678,22 @@ class DashboardPageState extends State<DashboardPage> {
             ),
           ),
           Text(
-            'Venue',
+            '30th floor Freelancer.com HQ, 32nd St. cor 9th Ave., Taguig City.',
             style: TextStyle(
               fontSize: 16,
               color: Colors.black54,
             ),
           ),
+          Padding(padding: EdgeInsets.only(bottom: 15)),
+              Container(
+                width: ResponsiveWidget.isLargeScreen(context) ? 175 : 130,
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.network(
+                    'https://user-images.githubusercontent.com/20706361/64528629-8fc38f00-d33b-11e9-9897-637f02015f10.png',
+                  ),
+                ),
+              ),
           Padding(padding: EdgeInsets.only(bottom: 24)),
           Text(
             'October 1, 2019',
@@ -687,10 +707,22 @@ class DashboardPageState extends State<DashboardPage> {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Venue',
+            '5th floor Recruitday, Paseo Center, Makati City',
             style: TextStyle(
               fontSize: 16,
               color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 15)),
+          Container(
+            color: Color(0xff131c24),
+            padding: EdgeInsets.only(top: 5, bottom: 5),
+            width: ResponsiveWidget.isLargeScreen(context) ? 175 : 130,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Image.network(
+                'https://user-images.githubusercontent.com/20706361/64491559-89caa100-d29c-11e9-89bd-b7bb26846dcd.png',
+              ),
             ),
           ),
         ],
@@ -759,7 +791,9 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
                   child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.50 : _width,
+                    width: ResponsiveWidget.isLargeScreen(context)
+                        ? _width * 0.50
+                        : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
@@ -795,7 +829,9 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
+                              width: ResponsiveWidget.isLargeScreen(context)
+                                  ? _width * 0.35
+                                  : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -964,7 +1000,9 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerRight
                       : Alignment.topCenter,
                   child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
+                    width: ResponsiveWidget.isLargeScreen(context)
+                        ? _width * 0.55
+                        : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(top: (_height * 0.25).toDouble()),
@@ -999,7 +1037,9 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
+                              width: ResponsiveWidget.isLargeScreen(context)
+                                  ? _width * 0.35
+                                  : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
