@@ -36,7 +36,7 @@ class FPHPartners extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Image.network(
-                    'https://user-images.githubusercontent.com/20706361/64491600-e9c14780-d29c-11e9-863e-c76c179e891b.png',
+                    'https://user-images.githubusercontent.com/20706361/64534132-745e8100-d347-11e9-909b-e554eb4c5f23.png',
                   ),
                 ),
               ),
