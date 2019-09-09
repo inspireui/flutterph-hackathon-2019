@@ -19,7 +19,7 @@ class FPHFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ResponsiveWidget.isLargeScreen(context) ? 100 : 150,
+      height: ResponsiveWidget.isLargeScreen(context) ? 100 : 130,
       child: ResponsiveWidget(
         largeScreen: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +43,7 @@ class FPHFooter extends StatelessWidget {
               'Website by Flutter Philippines',
               FPHWebsiteLinks.FLUTTER_PH,
             ),
-            Padding(padding: EdgeInsets.only(bottom: 20)),
+            Padding(padding: EdgeInsets.only(bottom: 15)),
             _buildFooterLinkTextView(
               'Illustrations by https://icons8.com',
               FPHWebsiteLinks.ICONS8,

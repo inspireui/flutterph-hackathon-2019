@@ -281,7 +281,9 @@ class DashboardPageState extends State<DashboardPage> {
                           FPHCtaButton(
                             rootContext: context,
                             onPressed: () {
-                              html.window.open("http://bit.ly/flutterph-hackathon2019-rsvp", "FPH");
+                              html.window.open(
+                                  "http://bit.ly/flutterph-hackathon2019-rsvp",
+                                  "FPH");
                             },
                             title: 'Register',
                             titleColor: Colors.white,
@@ -291,7 +293,9 @@ class DashboardPageState extends State<DashboardPage> {
                           FPHCtaButton(
                             rootContext: context,
                             onPressed: () {
-                              html.window.open("http://bit.ly/flutterph-hackathon2019-sponsors", "FPH-Sponsors");
+                              html.window.open(
+                                  "http://bit.ly/flutterph-hackathon2019-sponsors",
+                                  "FPH-Sponsors");
                             },
                             title: 'Become a partner',
                             titleColor: FPHColors.yellow,
@@ -360,17 +364,19 @@ class DashboardPageState extends State<DashboardPage> {
                   alignment: ResponsiveWidget.isLargeScreen(context)
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
-                  child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context)
-                        ? _width * 0.55
-                        : _width,
-                    padding: ResponsiveWidget.isLargeScreen(context)
-                        ? EdgeInsets.all(0)
-                        : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                          'https://user-images.githubusercontent.com/20706361/64471408-09188180-d184-11e9-83dc-1ec1005d892b.png'),
+                  child: AnimatedOpacity(
+                    duration: _opacityTransitionDuration,
+                    opacity:
+                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
+                    child: Container(
+                      width: ResponsiveWidget.isLargeScreen(context)
+                          ? _width * 0.55
+                          : _width,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                            'https://user-images.githubusercontent.com/20706361/64471408-09188180-d184-11e9-83dc-1ec1005d892b.png'),
+                      ),
                     ),
                   ),
                 ),
@@ -385,8 +391,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.only(
-                              bottom: (_height * 0.50).toDouble()),
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -519,18 +524,20 @@ class DashboardPageState extends State<DashboardPage> {
                 child: Align(
                   alignment: ResponsiveWidget.isLargeScreen(context)
                       ? Alignment.centerRight
-                      : Alignment.topCenter,
-                  child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context)
-                        ? _width * 0.55
-                        : _width,
-                    padding: ResponsiveWidget.isLargeScreen(context)
-                        ? EdgeInsets.all(0)
-                        : EdgeInsets.only(top: (_height * 0.25).toDouble()),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                        'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png',
+                      : Alignment.bottomCenter,
+                  child: AnimatedOpacity(
+                    duration: _opacityTransitionDuration,
+                    opacity:
+                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
+                    child: Container(
+                      width: ResponsiveWidget.isLargeScreen(context)
+                          ? _width * 0.55
+                          : _width,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                          'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png',
+                        ),
                       ),
                     ),
                   ),
@@ -546,7 +553,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.only(top: (_height * 0.50).toDouble()),
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -684,15 +691,15 @@ class DashboardPageState extends State<DashboardPage> {
             ),
           ),
           Padding(padding: EdgeInsets.only(bottom: 15)),
-              Container(
-                width: ResponsiveWidget.isLargeScreen(context) ? 175 : 130,
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.network(
-                    'https://user-images.githubusercontent.com/20706361/64528629-8fc38f00-d33b-11e9-9897-637f02015f10.png',
-                  ),
-                ),
+          Container(
+            width: ResponsiveWidget.isLargeScreen(context) ? 175 : 130,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Image.network(
+                'https://user-images.githubusercontent.com/20706361/64528629-8fc38f00-d33b-11e9-9897-637f02015f10.png',
               ),
+            ),
+          ),
           Padding(padding: EdgeInsets.only(bottom: 24)),
           Text(
             'October 1, 2019',
@@ -789,17 +796,19 @@ class DashboardPageState extends State<DashboardPage> {
                   alignment: ResponsiveWidget.isLargeScreen(context)
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
-                  child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context)
-                        ? _width * 0.50
-                        : _width,
-                    padding: ResponsiveWidget.isLargeScreen(context)
-                        ? EdgeInsets.all(0)
-                        : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                        'https://user-images.githubusercontent.com/20706361/64430494-f9009380-d0ea-11e9-9513-16ef6c3db06f.png',
+                  child: AnimatedOpacity(
+                    duration: _opacityTransitionDuration,
+                    opacity:
+                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
+                    child: Container(
+                      width: ResponsiveWidget.isLargeScreen(context)
+                          ? _width * 0.50
+                          : _width,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                          'https://user-images.githubusercontent.com/20706361/64430494-f9009380-d0ea-11e9-9513-16ef6c3db06f.png',
+                        ),
                       ),
                     ),
                   ),
@@ -815,8 +824,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.only(
-                              bottom: (_height * 0.30).toDouble()),
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -997,18 +1005,20 @@ class DashboardPageState extends State<DashboardPage> {
                 child: Align(
                   alignment: ResponsiveWidget.isLargeScreen(context)
                       ? Alignment.centerRight
-                      : Alignment.topCenter,
-                  child: Container(
-                    width: ResponsiveWidget.isLargeScreen(context)
-                        ? _width * 0.55
-                        : _width,
-                    padding: ResponsiveWidget.isLargeScreen(context)
-                        ? EdgeInsets.all(0)
-                        : EdgeInsets.only(top: (_height * 0.25).toDouble()),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Image.network(
-                        'https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png',
+                      : Alignment.bottomCenter,
+                  child: AnimatedOpacity(
+                    duration: _opacityTransitionDuration,
+                    opacity:
+                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
+                    child: Container(
+                      width: ResponsiveWidget.isLargeScreen(context)
+                          ? _width * 0.55
+                          : _width,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Image.network(
+                          'https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png',
+                        ),
                       ),
                     ),
                   ),
@@ -1024,7 +1034,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.only(top: (_height * 0.40).toDouble()),
+                          : EdgeInsets.all(0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
