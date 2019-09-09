@@ -249,8 +249,9 @@ class DashboardPageState extends State<DashboardPage> {
                     children: <Widget>[
                       Text(
                         'Flutter Online Hackathon 2019',
-                        textScaleFactor:
-                            ResponsiveWidget.isLargeScreen(context) ? 2.5 : 1.25,
+                        textScaleFactor: ResponsiveWidget.isLargeScreen(context)
+                            ? 2.5
+                            : 1.25,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: FPHColors.yellow,
@@ -258,14 +259,19 @@ class DashboardPageState extends State<DashboardPage> {
                       ),
                       Text(
                         'by Flutter Philippines | October 2019',
-                        textScaleFactor:
-                            ResponsiveWidget.isLargeScreen(context) ? 1.25 : 0.75,
+                        textScaleFactor: ResponsiveWidget.isLargeScreen(context)
+                            ? 1.25
+                            : 0.75,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black54,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: ResponsiveWidget.isLargeScreen(context) ? 50 : 20)),
+                      Padding(
+                          padding: EdgeInsets.only(
+                              bottom: ResponsiveWidget.isLargeScreen(context)
+                                  ? 50
+                                  : 20)),
                       Text(
                         'With over P100,000 worth of prizes to win!',
                         textScaleFactor:
@@ -417,15 +423,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 24)),
                                     Text(
                                       'September 2019',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.blue,
                                       ),
                                     ),
                                     Text(
                                       'Study Jams (Manila x Cebu)',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -433,15 +447,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 24)),
                                     Text(
                                       'October 2019',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.yellow,
                                       ),
                                     ),
                                     Text(
                                       'Flutter Online Hackathon 2019',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -449,15 +471,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 24)),
                                     Text(
                                       'November 2019',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.red,
                                       ),
                                     ),
                                     Text(
                                       'Announcement of winners',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -671,22 +701,23 @@ class DashboardPageState extends State<DashboardPage> {
         children: <Widget>[
           Text(
             'September 24, 2019',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: FPHColors.yellow,
             ),
           ),
           Text(
             'Everything is a Widget, Flutter Animations',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
             style: TextStyle(
-              fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             '30th floor Freelancer.com HQ, 32nd St. cor 9th Ave., Taguig City.',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: Colors.black54,
             ),
           ),
@@ -703,19 +734,23 @@ class DashboardPageState extends State<DashboardPage> {
           Padding(padding: EdgeInsets.only(bottom: 24)),
           Text(
             'October 1, 2019',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: FPHColors.yellow,
             ),
           ),
           Text(
             'State Management, RESTful APIs in Flutter',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Text(
             '5th floor Recruitday, Paseo Center, Makati City',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: Colors.black54,
             ),
           ),
@@ -739,41 +774,46 @@ class DashboardPageState extends State<DashboardPage> {
         children: <Widget>[
           Text(
             'Date',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: FPHColors.yellow,
             ),
           ),
           Text(
             'Topic',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
             style: TextStyle(
-              fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             'Venue',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: Colors.black54,
             ),
           ),
           Padding(padding: EdgeInsets.only(bottom: 24)),
           Text(
             'Date',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: FPHColors.yellow,
             ),
           ),
           Text(
             'Topic',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Text(
             'Venue',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
-              fontSize: 16,
               color: Colors.black54,
             ),
           ),
@@ -852,15 +892,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 16)),
                                     Text(
                                       'Members',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.blue,
                                       ),
                                     ),
                                     Text(
                                       'Gather a team of 4* creative thinkers',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -876,20 +924,28 @@ class DashboardPageState extends State<DashboardPage> {
                                     ),
                                     Text(
                                       'Theme',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.yellow,
                                       ),
                                     ),
                                     Text(
                                       'Will be announced after the study jams',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     Text(
-                                      'Let\'s be fair with everyone, start working on your projects on the event time.',
+                                      'Let\'s be fair with everyone, start working on your projects during the hackathon.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -900,15 +956,23 @@ class DashboardPageState extends State<DashboardPage> {
                                     ),
                                     Text(
                                       'Submission',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.red,
                                       ),
                                     ),
                                     Text(
                                       'Upload your projects on Github',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -923,15 +987,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 24)),
                                     Text(
                                       'Deployment',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.blue,
                                       ),
                                     ),
                                     Text(
                                       'Ship that app!',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -1060,15 +1132,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 16)),
                                     Text(
                                       'The Website',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.blue,
                                       ),
                                     ),
                                     Text(
                                       'We use the technical preview of Flutter for Web to develop this website',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -1083,15 +1163,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         padding: EdgeInsets.only(bottom: 24)),
                                     Text(
                                       'Contribution',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.25
+                                              : 1,
                                       style: TextStyle(
-                                        fontSize: 16,
                                         color: FPHColors.yellow,
                                       ),
                                     ),
                                     Text(
                                       'Our website is open-source*, feel free to submit PRs for fixes, improvements on Github',
+                                      textScaleFactor:
+                                          ResponsiveWidget.isLargeScreen(
+                                                  context)
+                                              ? 1.75
+                                              : 1.5,
                                       style: TextStyle(
-                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
