@@ -281,7 +281,7 @@ class DashboardPageState extends State<DashboardPage> {
                           FPHCtaButton(
                             rootContext: context,
                             onPressed: () {
-                              // TODO: Link to registration form
+                              html.window.open("http://bit.ly/flutterph-hackathon2019-rsvp", "FPH");
                             },
                             title: 'Register',
                             titleColor: Colors.white,
@@ -291,8 +291,7 @@ class DashboardPageState extends State<DashboardPage> {
                           FPHCtaButton(
                             rootContext: context,
                             onPressed: () {
-                              html.window.location.href =
-                                  "http://bit.ly/flutterph-hackathon2019-sponsors";
+                              html.window.open("http://bit.ly/flutterph-hackathon2019-sponsors", "FPH-Sponsors");
                             },
                             title: 'Become a partner',
                             titleColor: FPHColors.yellow,
