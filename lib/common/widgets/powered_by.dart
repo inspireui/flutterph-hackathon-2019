@@ -30,7 +30,7 @@ class FPHPoweredBy extends StatelessWidget {
           child: FittedBox(
             fit: BoxFit.fitWidth,
             child: Image.network(
-              'https://www.freepnglogos.com/uploads/google-logo-new-history-png-9.png',
+              'https://user-images.githubusercontent.com/20706361/64528616-8803ea80-d33b-11e9-8b5d-1c1eb8a154f5.png',
             ),
           ),
         ),
