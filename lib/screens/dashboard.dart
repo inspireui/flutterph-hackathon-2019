@@ -208,7 +208,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Opacity(
                       opacity: 0.10,
                       child: Container(
-                        width: _width * 0.55,
+                        width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
                         child: FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Image.network(
@@ -304,7 +304,7 @@ class DashboardPageState extends State<DashboardPage> {
                             ? _width * 0.50
                             : double.infinity,
                         child: Text(
-                          'Be part of the first-ever Flutter Hackathon here in the Philippines! Our goal is to help teams, developers, and companies develop and ship apps using Flutter/Dart.',
+                          'Be part of the first-ever Flutter Hackathon here in the Philippines! Our goal is to help teams, developers, and companies develop and ship beautiful and powerful apps using Flutter/Dart.',
                           textScaleFactor:
                               ResponsiveWidget.isLargeScreen(context)
                                   ? 1.25
@@ -360,7 +360,7 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
                   child: Container(
-                    width: 800,
+                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
@@ -395,7 +395,7 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: 500,
+                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -516,7 +516,7 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerRight
                       : Alignment.topCenter,
                   child: Container(
-                    width: 800,
+                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(top: (_height * 0.25).toDouble()),
@@ -551,7 +551,7 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: 500,
+                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -759,7 +759,7 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerLeft
                       : Alignment.bottomCenter,
                   child: Container(
-                    width: 700,
+                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.50 : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(bottom: (_height * 0.25).toDouble()),
@@ -783,7 +783,7 @@ class DashboardPageState extends State<DashboardPage> {
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
                           : EdgeInsets.only(
-                              bottom: (_height * 0.50).toDouble()),
+                              bottom: (_height * 0.30).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -795,7 +795,7 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: 500,
+                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -803,7 +803,7 @@ class DashboardPageState extends State<DashboardPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     SectionHeaderWidget(
-                                      title: 'Hackathon Mechanics',
+                                      title: 'Mechanics',
                                     ),
                                     Padding(
                                         padding: EdgeInsets.only(bottom: 16)),
@@ -964,7 +964,7 @@ class DashboardPageState extends State<DashboardPage> {
                       ? Alignment.centerRight
                       : Alignment.topCenter,
                   child: Container(
-                    width: 800,
+                    width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.55 : _width,
                     padding: ResponsiveWidget.isLargeScreen(context)
                         ? EdgeInsets.all(0)
                         : EdgeInsets.only(top: (_height * 0.25).toDouble()),
@@ -987,7 +987,7 @@ class DashboardPageState extends State<DashboardPage> {
                     child: Padding(
                       padding: ResponsiveWidget.isLargeScreen(context)
                           ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.only(top: (_height * 0.50).toDouble()),
+                          : EdgeInsets.only(top: (_height * 0.40).toDouble()),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -999,7 +999,7 @@ class DashboardPageState extends State<DashboardPage> {
                             shadowColor: Colors.black54,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             child: Container(
-                              width: 500,
+                              width: ResponsiveWidget.isLargeScreen(context) ? _width * 0.35 : _width,
                               padding: EdgeInsets.all(30),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -1047,7 +1047,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'This was made just under 24 hours, but I ran out of coffee! *We\'re just cleaning it up for you.',
+                                      'This website was made in just under 24 hours, but we ran out of coffee! *We\'re just cleaning it up for you.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
