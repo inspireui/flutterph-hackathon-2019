@@ -250,7 +250,7 @@ class DashboardPageState extends State<DashboardPage> {
                       Text(
                         'Flutter Online Hackathon 2019',
                         textScaleFactor:
-                            ResponsiveWidget.isLargeScreen(context) ? 2.5 : 1.5,
+                            ResponsiveWidget.isLargeScreen(context) ? 2.5 : 1.25,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: FPHColors.yellow,
@@ -259,17 +259,17 @@ class DashboardPageState extends State<DashboardPage> {
                       Text(
                         'by Flutter Philippines | October 2019',
                         textScaleFactor:
-                            ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+                            ResponsiveWidget.isLargeScreen(context) ? 1.25 : 0.75,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black54,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 50)),
+                      Padding(padding: EdgeInsets.only(bottom: ResponsiveWidget.isLargeScreen(context) ? 50 : 20)),
                       Text(
                         'With over P100,000 worth of prizes to win!',
                         textScaleFactor:
-                            ResponsiveWidget.isLargeScreen(context) ? 3.5 : 2,
+                            ResponsiveWidget.isLargeScreen(context) ? 3.5 : 1.5,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: FPHColors.blue,
