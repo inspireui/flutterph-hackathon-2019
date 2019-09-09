@@ -445,7 +445,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Announcement of winners!',
+                                      'Announcement of winners',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
@@ -863,14 +863,14 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Upload your projects on Github.',
+                                      'Upload your projects on Github',
                                       style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     Text(
-                                      'We\'re passionate on supporting the open-source community. Demos are required, it can be in a form of video, an uploaded app to Google Play Store, or even a hosted Flutter Web project!',
+                                      'We\'re passionate on supporting the open-source community. Showcase your project in a form of demo video, upload it to Google Play Store, or host your Flutter Web project online!',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
@@ -893,7 +893,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Special prizes await those teams who can ship their app to Google Play Store.',
+                                      'Special prizes await those teams who can ship their apps to Google Play Store.',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
