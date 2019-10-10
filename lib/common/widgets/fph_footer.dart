@@ -4,9 +4,8 @@
 
 import 'package:flutter_web/material.dart';
 import 'dart:html' as html;
-
 import 'package:flutterph_hackathon2019/common/constants/constants.dart';
-import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
+import 'package:flutterph_hackathon2019/common/widgets/fph_widgets.dart';
 
 class FPHFooter extends StatelessWidget {
   final BuildContext rootContext;

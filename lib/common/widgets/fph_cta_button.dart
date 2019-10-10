@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
-import 'package:flutterph_hackathon2019/common/widgets/widgets.dart';
+import 'package:flutterph_hackathon2019/common/widgets/fph_widgets.dart';
 
 class FPHCtaButton extends StatelessWidget {
   final BuildContext rootContext;
