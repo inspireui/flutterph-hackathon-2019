@@ -288,7 +288,7 @@ class DashboardPageState extends State<DashboardPage> {
                             rootContext: context,
                             onPressed: () {
                               html.window.open(
-                                  "http://bit.ly/flutterph-hackathon2019-rsvp",
+                                  "https://bit.ly/flutterph-hackathon-2019",
                                   "FPH");
                             },
                             title: 'Register',
@@ -934,7 +934,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Will be announced after the study jams',
+                                      'Productivity/Utility or Game',
                                       textScaleFactor:
                                           ResponsiveWidget.isLargeScreen(
                                                   context)
@@ -945,7 +945,7 @@ class DashboardPageState extends State<DashboardPage> {
                                       ),
                                     ),
                                     Text(
-                                      'Let\'s be fair with everyone, start working on your projects during the hackathon.',
+                                      'You may build anything under the sun as long as it is within the stated categories',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.black54,
