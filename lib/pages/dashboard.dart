@@ -314,7 +314,7 @@ class DashboardPageState extends State<DashboardPage> {
                             ? _width * 0.50
                             : double.infinity,
                         child: Text(
-                          'Be part of the first-ever Flutter Hackathon here in the Philippines! Our goal is to help teams, developers, and companies develop and ship beautiful and powerful apps using Flutter/Dart.',
+                          'Be part of the first-ever Flutter Hackathon here in the Philippines! Our goal is to help teams, developers, and companies ship beautiful and powerful apps using Flutter/Dart.',
                           textScaleFactor:
                               ResponsiveWidget.isLargeScreen(context)
                                   ? 1.25
@@ -710,7 +710,7 @@ class DashboardPageState extends State<DashboardPage> {
             ),
           ),
           Text(
-            'Special prizes await for those teams who can ship their apps to Google Play Store.',
+            'Special prizes await for those teams who can ship their apps to Google Play Store. (Few slots!)',
             style: TextStyle(
               fontSize: 12,
               color: Colors.black54,
@@ -738,14 +738,14 @@ class DashboardPageState extends State<DashboardPage> {
           SectionHeaderWidget(title: 'About'),
           Padding(padding: EdgeInsets.only(bottom: 16)),
           Text(
-            'The Website',
+            'The website',
             textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
             style: TextStyle(
               color: FPHColors.blue,
             ),
           ),
           Text(
-            'We use the technical preview of Flutter for Web to develop this website',
+            'We have used the technical preview of Flutter for Web to develop this website',
             textScaleFactor:
                 ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
             style: TextStyle(
@@ -768,7 +768,7 @@ class DashboardPageState extends State<DashboardPage> {
             ),
           ),
           Text(
-            'Our website is open-source*, feel free to submit PRs for fixes, improvements on Github',
+            'Our website is open-source, feel free to submit PRs for fixes, improvements on Github',
             textScaleFactor:
                 ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
             style: TextStyle(
@@ -776,7 +776,7 @@ class DashboardPageState extends State<DashboardPage> {
             ),
           ),
           Text(
-            'This website was made in just under 24 hours, but we ran out of coffee! *We\'re just cleaning it up for you.',
+            'This website was made in just under 24 hours, but we ran out of coffee!',
             style: TextStyle(
               fontSize: 12,
               color: Colors.black54,
