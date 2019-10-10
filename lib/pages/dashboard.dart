@@ -141,10 +141,10 @@ class DashboardPageState extends State<DashboardPage> {
                     controller: _pageController,
                     children: <Widget>[
                       _buildHeaderView(),
-                      _buildTimelineView(),
-                      _buildStudyJamsView(),
-                      _buildMechanicsView(),
-                      _buildAboutView()
+                      _buildTimelineView(context),
+                      _buildStudyJamsView(context),
+                      _buildMechanicsView(context),
+                      _buildAboutView(context)
                     ],
                   ),
                 ),
@@ -188,6 +188,7 @@ class DashboardPageState extends State<DashboardPage> {
     });
   }
 
+  // TODO: Migrate this soon to FPHPageSection
   Widget _buildHeaderView() {
     return AnimatedOpacity(
       duration: _opacityTransitionDuration,
@@ -354,340 +355,122 @@ class DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  Widget _buildTimelineView() {
-    return AnimatedOpacity(
-      duration: _opacityTransitionDuration,
+  Widget _buildTimelineView(BuildContext size) {
+    return FPHPageSection(
+      pageNumber: 1,
+      maxPages: _maxPage,
+      rootSize: MediaQuery.of(context).size,
       opacity: _opacityTimelineView,
-      child: Center(
-        child: Container(
-          width: _width / 1.25,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerLeft
-                      : Alignment.bottomCenter,
-                  child: AnimatedOpacity(
-                    duration: _opacityTransitionDuration,
-                    opacity:
-                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
-                    child: Container(
-                      width: ResponsiveWidget.isLargeScreen(context)
-                          ? _width * 0.55
-                          : _width,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.network(
-                            'https://user-images.githubusercontent.com/20706361/64471408-09188180-d184-11e9-83dc-1ec1005d892b.png'),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerRight
-                      : Alignment.center,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Padding(
-                      padding: ResponsiveWidget.isLargeScreen(context)
-                          ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Material(
-                            elevation: 12.0,
-                            color: Colors.white,
-                            clipBehavior: Clip.antiAlias,
-                            shadowColor: Colors.black54,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context)
-                                  ? _width * 0.35
-                                  : _width,
-                              padding: EdgeInsets.all(30),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    SectionHeaderWidget(title: 'Timeline'),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    Text(
-                                      'September 2019',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.blue,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Study Jams (Manila x Cebu)',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    Text(
-                                      'October 2019',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.yellow,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Flutter Online Hackathon 2019',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    Text(
-                                      'November 2019',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.red,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Announcement of winners',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        0,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.PREVIOUS,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        2,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.NEXT,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-            ],
+      fphPageSectionAlign: FPHPageSectionAlign.RIGHT,
+      imagePath:
+          "https://user-images.githubusercontent.com/20706361/64471408-09188180-d184-11e9-83dc-1ec1005d892b.png",
+      pageController: _pageController,
+      contentChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SectionHeaderWidget(title: 'Timeline'),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'September 2019',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.blue,
+            ),
           ),
-        ),
+          Text(
+            'Study Jams (Manila x Cebu)',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'October 2019',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.yellow,
+            ),
+          ),
+          Text(
+            'Flutter Online Hackathon 2019',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'November 2019',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.red,
+            ),
+          ),
+          Text(
+            'Announcement of winners',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildStudyJamsView() {
-    return AnimatedOpacity(
-      duration: _opacityTransitionDuration,
+  Widget _buildStudyJamsView(BuildContext context) {
+    return FPHPageSection(
+      pageNumber: 2,
+      maxPages: _maxPage,
+      rootSize: MediaQuery.of(context).size,
       opacity: _opacityStudyJamsView,
-      child: Center(
-        child: Container(
-          width: _width / 1.25,
-          child: Stack(
+      fphPageSectionAlign: FPHPageSectionAlign.LEFT,
+      imagePath:
+          "https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png",
+      pageController: _pageController,
+      contentChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SectionHeaderWidget(title: 'Study Jams'),
+          Padding(padding: EdgeInsets.only(bottom: 16)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerRight
-                      : Alignment.bottomCenter,
-                  child: AnimatedOpacity(
-                    duration: _opacityTransitionDuration,
-                    opacity:
-                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
-                    child: Container(
-                      width: ResponsiveWidget.isLargeScreen(context)
-                          ? _width * 0.55
-                          : _width,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.network(
-                          'https://user-images.githubusercontent.com/20706361/64428818-467b0180-d0e7-11e9-9f9d-c2fcb0a90619.png',
-                        ),
-                      ),
-                    ),
-                  ),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    isStudyJamShowingManilaSchedule = true;
+                  });
+                },
+                child: FPHChip(
+                  title: 'Manila',
+                  color: Colors.blue,
+                  isSelected: isStudyJamShowingManilaSchedule,
                 ),
               ),
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerLeft
-                      : Alignment.center,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Padding(
-                      padding: ResponsiveWidget.isLargeScreen(context)
-                          ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Material(
-                            elevation: 12.0,
-                            color: Colors.white,
-                            clipBehavior: Clip.antiAlias,
-                            shadowColor: Colors.black54,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context)
-                                  ? _width * 0.35
-                                  : _width,
-                              padding: EdgeInsets.all(30),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    SectionHeaderWidget(title: 'Study Jams'),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 16)),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        InkWell(
-                                          onTap: () {
-                                            setState(() {
-                                              isStudyJamShowingManilaSchedule =
-                                                  true;
-                                            });
-                                          },
-                                          child: FPHChip(
-                                            title: 'Manila',
-                                            color: Colors.blue,
-                                            isSelected:
-                                                isStudyJamShowingManilaSchedule,
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-                                            setState(() {
-                                              isStudyJamShowingManilaSchedule =
-                                                  false;
-                                            });
-                                          },
-                                          child: FPHChip(
-                                            title: 'Cebu',
-                                            color: FPHColors.red,
-                                            isSelected:
-                                                !isStudyJamShowingManilaSchedule,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    _buildStudyJamsScheduleView()
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        1,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.PREVIOUS,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        3,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.NEXT,
-                    color: Colors.black54,
-                  ),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    isStudyJamShowingManilaSchedule = false;
+                  });
+                },
+                child: FPHChip(
+                  title: 'Cebu',
+                  color: FPHColors.red,
+                  isSelected: !isStudyJamShowingManilaSchedule,
                 ),
               ),
             ],
           ),
-        ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          _buildStudyJamsScheduleView()
+        ],
       ),
     );
   }
@@ -820,404 +603,186 @@ class DashboardPageState extends State<DashboardPage> {
     }
   }
 
-  Widget _buildMechanicsView() {
-    return AnimatedOpacity(
-      duration: _opacityTransitionDuration,
+  Widget _buildMechanicsView(BuildContext context) {
+    return FPHPageSection(
+      pageNumber: 3,
+      maxPages: _maxPage,
+      rootSize: MediaQuery.of(context).size,
       opacity: _opacityMechanicsView,
-      child: Center(
-        child: Container(
-          width: _width / 1.25,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerLeft
-                      : Alignment.bottomCenter,
-                  child: AnimatedOpacity(
-                    duration: _opacityTransitionDuration,
-                    opacity:
-                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
-                    child: Container(
-                      width: ResponsiveWidget.isLargeScreen(context)
-                          ? _width * 0.50
-                          : _width,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.network(
-                          'https://user-images.githubusercontent.com/20706361/64430494-f9009380-d0ea-11e9-9513-16ef6c3db06f.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerRight
-                      : Alignment.center,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Padding(
-                      padding: ResponsiveWidget.isLargeScreen(context)
-                          ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Material(
-                            elevation: 12.0,
-                            color: Colors.white,
-                            clipBehavior: Clip.antiAlias,
-                            shadowColor: Colors.black54,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context)
-                                  ? _width * 0.35
-                                  : _width,
-                              padding: EdgeInsets.all(30),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    SectionHeaderWidget(
-                                      title: 'Mechanics',
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 16)),
-                                    Text(
-                                      'Members',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.blue,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Gather a team of 4* creative thinkers',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      '*Minimum of 2 and maximum of 4 members.',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 24),
-                                    ),
-                                    Text(
-                                      'Theme',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.yellow,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Productivity/Utility or Game',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      'You may build anything under the sun as long as it is within the stated categories',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 24),
-                                    ),
-                                    Text(
-                                      'Submission',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.red,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Upload your projects on Github',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      'We\'re passionate in supporting the open-source community. Showcase your project in a form of demo video, upload it to Google Play Store, or host your Flutter Web project online!',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    Text(
-                                      'Deployment',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.blue,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Ship that app!',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Special prizes await for those teams who can ship their apps to Google Play Store.',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        2,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.PREVIOUS,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        4,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.NEXT,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-            ],
+      fphPageSectionAlign: FPHPageSectionAlign.RIGHT,
+      imagePath:
+          "https://user-images.githubusercontent.com/20706361/64430494-f9009380-d0ea-11e9-9513-16ef6c3db06f.png",
+      pageController: _pageController,
+      contentChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SectionHeaderWidget(
+            title: 'Mechanics',
           ),
-        ),
+          Padding(padding: EdgeInsets.only(bottom: 16)),
+          Text(
+            'Members',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.blue,
+            ),
+          ),
+          Text(
+            'Gather a team of 4* creative thinkers',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            '*Minimum of 2 and maximum of 4 members.',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 24),
+          ),
+          Text(
+            'Theme',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.yellow,
+            ),
+          ),
+          Text(
+            'Productivity/Utility or Game',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'You may build anything under the sun as long as it is within the stated categories',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 24),
+          ),
+          Text(
+            'Submission',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.red,
+            ),
+          ),
+          Text(
+            'Upload your projects on Github',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'We\'re passionate in supporting the open-source community. Showcase your project in a form of demo video, upload it to Google Play Store, or host your Flutter Web project online!',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'Deployment',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.blue,
+            ),
+          ),
+          Text(
+            'Ship that app!',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'Special prizes await for those teams who can ship their apps to Google Play Store.',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildAboutView() {
-    return AnimatedOpacity(
-      duration: _opacityTransitionDuration,
+  Widget _buildAboutView(BuildContext context) {
+    return FPHPageSection(
+      pageNumber: 4,
+      maxPages: _maxPage,
+      rootSize: MediaQuery.of(context).size,
       opacity: _opacityAboutView,
-      child: Center(
-        child: Container(
-          width: _width / 1.25,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerRight
-                      : Alignment.bottomCenter,
-                  child: AnimatedOpacity(
-                    duration: _opacityTransitionDuration,
-                    opacity:
-                        ResponsiveWidget.isLargeScreen(context) ? 1.0 : 0.10,
-                    child: Container(
-                      width: ResponsiveWidget.isLargeScreen(context)
-                          ? _width * 0.55
-                          : _width,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: Image.network(
-                          'https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: ResponsiveWidget.isLargeScreen(context)
-                      ? Alignment.centerLeft
-                      : Alignment.center,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Padding(
-                      padding: ResponsiveWidget.isLargeScreen(context)
-                          ? EdgeInsets.only(right: 50)
-                          : EdgeInsets.all(0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Material(
-                            elevation: 12.0,
-                            color: Colors.white,
-                            clipBehavior: Clip.antiAlias,
-                            shadowColor: Colors.black54,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              width: ResponsiveWidget.isLargeScreen(context)
-                                  ? _width * 0.35
-                                  : _width,
-                              padding: EdgeInsets.all(30),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    SectionHeaderWidget(title: 'About'),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 16)),
-                                    Text(
-                                      'The Website',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.blue,
-                                      ),
-                                    ),
-                                    Text(
-                                      'We use the technical preview of Flutter for Web to develop this website',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter, here in the Philippines.',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(bottom: 24)),
-                                    Text(
-                                      'Contribution',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.25
-                                              : 1,
-                                      style: TextStyle(
-                                        color: FPHColors.yellow,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Our website is open-source*, feel free to submit PRs for fixes, improvements on Github',
-                                      textScaleFactor:
-                                          ResponsiveWidget.isLargeScreen(
-                                                  context)
-                                              ? 1.75
-                                              : 1.5,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      'This website was made in just under 24 hours, but we ran out of coffee! *We\'re just cleaning it up for you.',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: FPHPageControl(
-                    onPressed: () {
-                      _pageController.animateToPage(
-                        3,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    controlOption: FPHPageControlOption.PREVIOUS,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-            ],
+      fphPageSectionAlign: FPHPageSectionAlign.RIGHT,
+      imagePath:
+          "https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png",
+      pageController: _pageController,
+      contentChild: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SectionHeaderWidget(title: 'About'),
+          Padding(padding: EdgeInsets.only(bottom: 16)),
+          Text(
+            'The Website',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.blue,
+            ),
           ),
-        ),
+          Text(
+            'We use the technical preview of Flutter for Web to develop this website',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'Flutter Web is not yet officially released, some features might not work or might be unstable. Our team is one of the early adopters of Flutter, here in the Philippines.',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 24)),
+          Text(
+            'Contribution',
+            textScaleFactor: ResponsiveWidget.isLargeScreen(context) ? 1.25 : 1,
+            style: TextStyle(
+              color: FPHColors.yellow,
+            ),
+          ),
+          Text(
+            'Our website is open-source*, feel free to submit PRs for fixes, improvements on Github',
+            textScaleFactor:
+                ResponsiveWidget.isLargeScreen(context) ? 1.75 : 1.5,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'This website was made in just under 24 hours, but we ran out of coffee! *We\'re just cleaning it up for you.',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black54,
+            ),
+          ),
+        ],
       ),
     );
   }
