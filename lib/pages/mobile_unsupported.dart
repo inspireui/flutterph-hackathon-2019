@@ -3,15 +3,13 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_web/material.dart';
-
-import '../common/widgets/widgets.dart';
-import '../theme/theme.dart';
+import 'package:flutterph_hackathon2019/common/widgets/fph_widgets.dart';
 import 'dart:html' as html;
+import '../theme/theme.dart';
 
 class MobileUnsupportedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xfffefef3),
       body: Center(
