@@ -247,7 +247,7 @@ class DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Flutter Online Hackathon 2019',
+                        'Flutter Hackathon 2019',
                         textScaleFactor: ResponsiveWidget.isLargeScreen(context)
                             ? 2.5
                             : 1.25,
