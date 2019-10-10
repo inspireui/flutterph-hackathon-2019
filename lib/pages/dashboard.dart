@@ -257,7 +257,7 @@ class DashboardPageState extends State<DashboardPage> {
                         ),
                       ),
                       Text(
-                        'by Flutter Philippines | October 2019',
+                        'by Flutter Philippines | October 14-29, 2019',
                         textScaleFactor: ResponsiveWidget.isLargeScreen(context)
                             ? 1.25
                             : 0.75,
