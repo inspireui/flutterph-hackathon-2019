@@ -727,7 +727,7 @@ class DashboardPageState extends State<DashboardPage> {
       maxPages: _maxPage,
       rootSize: MediaQuery.of(context).size,
       opacity: _opacityAboutView,
-      fphPageSectionAlign: FPHPageSectionAlign.RIGHT,
+      fphPageSectionAlign: FPHPageSectionAlign.LEFT,
       imagePath:
           "https://user-images.githubusercontent.com/20706361/64478661-ee72f680-d1dd-11e9-9865-b0424130b1b7.png",
       pageController: _pageController,
