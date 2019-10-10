@@ -1,9 +1,5 @@
 import 'package:flutter_web/material.dart';
-import 'package:flutterph_hackathon2019/screens/dashboard.dart';
-import 'package:flutterph_hackathon2019/screens/mobile_unsupported.dart';
-
-import 'common/widgets/widgets.dart';
-import 'theme/theme.dart';
+import 'package:flutterph_hackathon2019/pages/dashboard.dart';
 
 void main() => runApp(HackathonApp());
 
@@ -26,13 +22,6 @@ class HackathonApp extends StatelessWidget {
 class HackathonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    // TODO: Support more devices soon
     return DashboardPage();
-    // if (width > 600) {
-    //   return DashboardPage();
-    // } else {
-    //   return MobileUnsupportedScreen();
-    // }
   }
 }
